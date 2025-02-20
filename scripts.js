@@ -96,5 +96,23 @@ function updateCart() {
     cartCountElement.textContent = cartCount;
 }
 
-// Renderizar todos los productos al cargar la página
-renderProducts(products);
+// Renderizar productos dinámicamente
+function renderProducts() {
+    const catalogContainer = document.querySelector('.catalog-container');
+    catalogContainer.innerHTML = '';
+
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Price: €${product.price}</p>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
+        `;
+        catalogContainer.appendChild(productCard);
+    });
+}
+
+// Llamar a la función para renderizar productos al cargar la página
+renderProducts();
