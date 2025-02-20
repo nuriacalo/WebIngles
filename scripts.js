@@ -1,4 +1,3 @@
-
 // Datos de productos
 const products = [
     { id: 1, name: "Intel 8086 Processor (1980s)", price: 110, category: "vintage", type: "processors", brand: "intel", image: "intel-8086.jpg" },
@@ -42,18 +41,26 @@ let cartTotal = 0;
 
 // Función para renderizar productos
 function renderProducts(filteredProducts) {
-    const productsContainer = document.querySelector('.products-container');
+    const productsContainer = document.querySelector('.catalog-container');
     productsContainer.innerHTML = '';
 
     filteredProducts.forEach(product => {
-        const productElement = document.createElement('article');
-        productElement.classList.add('product');
+        const productElement = document.createElement('div');
+        productElement.classList.add('product-card');
         productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p class="price">€${product.price}</p>
-                <button onclick="addToCart(${product.id})">Add to Cart</button>
-            `;
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Price: €${product.price ? product.price : 'Contact us for pricing'}</p>
+            <button>Add to Cart</button>
+        `;
+
+        // *** AQUI VA EL CODIGO ***
+        const addToCartButton = productElement.querySelector('button');
+        addToCartButton.addEventListener('click', () => {
+            addToCart(product.id);
+        });
+        // *** FIN DEL CODIGO ***
+
         productsContainer.appendChild(productElement);
     });
 }
@@ -61,10 +68,12 @@ function renderProducts(filteredProducts) {
 // Función para agregar productos al carrito
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
-    cart.push(product);
-    cartCount++;
-    cartTotal += product.price;
-    updateCart();
+    if (product) {
+        cart.push(product);
+        cartCount++;
+        cartTotal += product.price || 0; // Sumar 0 si el precio no está definido
+        updateCart();
+    }
 }
 
 // Función para actualizar el carrito
@@ -76,54 +85,16 @@ function updateCart() {
     cartItems.innerHTML = '';
     cart.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.name} - €${item.price}`;
+        li.innerHTML = `
+            <span>${item.name}</span>
+            <span>€${item.price ? item.price.toFixed(2) : 'Contact us for pricing'}</span>
+        `;
         cartItems.appendChild(li);
     });
 
-    cartTotalElement.textContent = `€${cartTotal}`;
+    cartTotalElement.textContent = `€${cartTotal.toFixed(2)}`;
     cartCountElement.textContent = cartCount;
 }
-
-// Función para filtrar productos
-function filterProducts() {
-    const form = document.getElementById('filter-form');
-    const formData = new FormData(form);
-    const selectedCategories = formData.getAll('category');
-    const selectedPriceRanges = formData.getAll('price-range');
-    const selectedConditions = formData.getAll('condition');
-    const selectedProductTypes = formData.getAll('product-type');
-    const selectedBrands = formData.getAll('brand');
-
-    const filteredProducts = products.filter(product => {
-        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-        const matchesPriceRange = selectedPriceRanges.length === 0 || selectedPriceRanges.some(range => {
-            const [min, max] = range.split('-').map(Number);
-            return (max ? product.price >= min && product.price <= max : product.price >= min);
-        });
-        const matchesCondition = selectedConditions.length === 0 || selectedConditions.includes(product.condition);
-        const matchesProductType = selectedProductTypes.length === 0 || selectedProductTypes.includes(product.type);
-        const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-
-        return matchesCategory && matchesPriceRange && matchesCondition && matchesProductType && matchesBrand;
-    });
-
-    renderProducts(filteredProducts);
-}
-
-// Event listeners
-document.getElementById('filter-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    filterProducts();
-});
-
-document.getElementById('cart-toggle').addEventListener('click', function () {
-    const cart = document.getElementById('cart');
-    cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
-});
-
-document.getElementById('checkout').addEventListener('click', function () {
-    alert('Checkout functionality not implemented yet.');
-});
 
 // Renderizar todos los productos al cargar la página
 renderProducts(products);
