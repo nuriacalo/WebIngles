@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Company</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Fuente más moderna */
+            margin: 0; /* Elimina márgenes predeterminados */
+            line-height: 1.6; /* Mejora la legibilidad */
+            color: #333; /* Color de texto más agradable */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px; /* Aumenta el espaciado alrededor del contenido */
+            background-color: #f8f8f8; /* Fondo gris claro */
+        }
+        .member {
+            margin: 20px;
+            text-align: center;
+            flex: 1 1 300px;
+            background-color: white; /* Fondo blanco para los miembros */
+            padding: 20px; /* Espacio interno para los miembros */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            transition: transform 0.2s ease-in-out; /* Transición suave al hacer hover */
+        }
+        .member:hover {
+            transform: translateY(-5px); /* Ligera elevación al hacer hover */
+        }
+        img {
+            max-width: 150px; /* Tamaño de imagen fijo */
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover; /* Para que la imagen se ajuste al círculo sin deformarse */
+            margin-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff; /* Color azul para los títulos */
+        }
+        p {
+            text-align: justify; /* Texto justificado */
+        }
+        /* Estilos para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .member {
+                flex: 1 1 100%;
+            }
+        }
+        /* Estilos para el encabezado y el pie de página (opcional) */
+        header {
+            background-color: #007bff; /* Azul para el encabezado */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333; /* Gris oscuro para el pie de página */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed; /* Pie de página fijo en la parte inferior */
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Our Company</h1>
+    </header>
+
+    <div class="container">
+        <div class="member">
+            <img src="unnamed.png" alt="Nombre 1">
+            <h2>Alexandre Barbeito Domínguez</h2>
+            <p>Backend Manager: Director of software development and maintenance to ensure the proper server performance.</p>
+        </div>
+
+        <div class="member">
+            <img src="unnamed.png" alt="Nombre 2">
+            <h2>Martín Sánchez Novo</h2>
+            <p>Gaming Specialist: expert in computers, peripherals, and next-gen components to maximize PC Gaming Performance.</p>
+        </div>
+
+        <div class="member">
+            <img src="unnamed.png" alt="Nombre 3">
+            <h2>Nuria Calo Mosquera</h2>
+            <p>Frontend Manager: Developer responsible for the visual and functional aspects of web development.</p>
+        </div>
+
+        <div class="member">
+            <img src="unnamed.png" alt="Nombre 4">
+            <h2>Silvia García Bouza</h2>
+            <p>Head of Computer and Mobile Devices. Director of hardware and software purchasing and sales for computers and mobile devices.</p>
+        </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 20px;">We are a leading online technology store, with more than 10 years of experience. We are experts in computers and electronics and we sell hardware components for electronic devices.</p>
+    <h1>Our history</h1>
+
+    <p style="text-align: center; margin-top: 20px;">We started with a small local business that expanded to different areas of the country. Today we have distribution locations all around the world (A Coruña, Barcelona, Tokyo, Brussels, Lima...). And we also continue to expand, including, recently, new locations such as: Sydney, Alaska and Toronto.</p>
+
+
+    <footer>
+        &copy; 2023 Our Company. All rights reserved.  </footer>
+
+</body>
+</html>
