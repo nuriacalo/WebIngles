@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Tech Shop - Catálogo</title>
+    <link rel="stylesheet" href="jurassic.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>
+                    <a href="/catalog">Catalog</a>
+                    <ul>
+                        <li><a href="/catalog/vintage">Vintage</a></li>
+                        <li><a href="/catalog/refurbished">Refurbished</a></li>
+                        <li><a href="/catalog/new">New</a></li>
+                    </ul>
+                </li>
+                <li><a href="/us">Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="#" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <aside class="products-filter">
+            <h2>Filters</h2>
+            <div class="filters">
+                <!-- Filtros por categoría -->
+                <h3>Category</h3>
+                <ul id="category-filter">
+                    <li><input type="checkbox" id="category-all" data-category="all"><label
+                            for="category-all">All</label></li>
+                    <li><input type="checkbox" id="category-computers" data-category="computers"><label
+                            for="category-computers">Computers & Components</label></li>
+                    <li><input type="checkbox" id="category-consoles" data-category="consoles"><label
+                            for="category-consoles">Retro Consoles & Videogames</label></li>
+                    <li><input type="checkbox" id="category-peripherals" data-category="peripherals"><label
+                            for="category-peripherals">Peripherals & Accessories</label></li>
+                    <li><input type="checkbox" id="category-components" data-category="components"><label
+                            for="category-components">Small Parts & Components</label></li>
+                </ul>
+
+                <!-- Filtros por rango de precio -->
+                <h3>Price Range</h3>
+                <label for="price-range">Price:</label>
+                <input type="range" id="price-range" min="5" max="4500" value="500" step="5">
+                <p id="price-label">€5 - €4500</p>
+
+                <!-- Filtros por condición -->
+                <h3>Condition</h3>
+                <ul id="condition-filter">
+                    <li><input type="checkbox" id="condition-all" data-condition="all"><label
+                            for="condition-all">All</label></li>
+                    <li><input type="checkbox" id="condition-vintage" data-condition="vintage"><label
+                            for="condition-vintage">Vintage</label></li>
+                    <li><input type="checkbox" id="condition-refurbished" data-condition="refurbished"><label
+                            for="condition-refurbished">Refurbished</label></li>
+                    <li><input type="checkbox" id="condition-new" data-condition="new"><label
+                            for="condition-new">New</label></li>
+                </ul>
+
+                <!-- Filtros por marca -->
+                <h3>Brand</h3>
+                <ul id="brand-filter">
+                    <li><input type="checkbox" id="brand-all" data-brand="all"><label for="brand-all">All</label>
+                    </li>
+                    <li><input type="checkbox" id="brand-intel" data-brand="intel"><label
+                            for="brand-intel">Intel</label></li>
+                    <li><input type="checkbox" id="brand-amd" data-brand="amd"><label for="brand-amd">AMD</label>
+                    </li>
+                    <li><input type="checkbox" id="brand-nvidia" data-brand="nvidia"><label
+                            for="brand-nvidia">Nvidia</label></li>
+                    <li><input type="checkbox" id="brand-corsair" data-brand="corsair"><label
+                            for="brand-corsair">Corsair</label></li>
+                </ul>
+
+                <!-- Filtros por capacidad -->
+                <h3>Storage Capacity</h3>
+                <ul id="storage-filter">
+                    <li><input type="checkbox" id="storage-all" data-storage="all"><label for="storage-all">All</label>
+                    </li>
+                    <li><input type="checkbox" id="storage-1tb" data-storage="1tb"><label for="storage-1tb">1
+                            TB</label></li>
+                    <li><input type="checkbox" id="storage-2tb" data-storage="2tb"><label for="storage-2tb">2
+                            TB</label></li>
+                    <li><input type="checkbox" id="storage-500gb" data-storage="500gb"><label for="storage-500gb">500
+                            GB</label></li>
+                </ul>
+
+                <!-- Filtros por tipo de conexión -->
+                <h3>Connection Type</h3>
+                <ul id="connection-filter">
+                    <li><input type="checkbox" id="connection-all" data-connection="all"><label
+                            for="connection-all">All</label></li>
+                    <li><input type="checkbox" id="connection-sata" data-connection="sata"><label
+                            for="connection-sata">SATA</label></li>
+                    <li><input type="checkbox" id="connection-nvme" data-connection="nvme"><label
+                            for="connection-nvme">NVMe</label></li>
+                    <li><input type="checkbox" id="connection-usb" data-connection="usb"><label
+                            for="connection-usb">USB</label></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="catalog-section">
+            <h2>Product Catalog</h2>
+            <div class="catalog-container">
+                <!-- Aquí van las tarjetas de productos -->
+                <div class="product-card" data-category="computers" data-condition="vintage"
+                    data-name="Intel 8086 Processor" data-price="110" data-brand="intel">
+                    <img src="productos\intel-80286.jpg" alt="Intel 8086 Processor">
+                    <h3>Intel 8086 o 80286 Processor (1980s)</h3>
+                    <p>Price: €110</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage"
+                    data-name="IBM PC XT/AT Motherboard" data-price="350" data-brand="ibm">
+                    <img src="productos/IBM_PC_Motherboard_(1981).jpg" alt="IBM PC XT/AT Motherboard">
+                    <h3>IBM PC XT/AT Motherboard (1980s)</h3>
+                    <p>Price: €350</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage" data-name="Commodore 64"
+                    data-price="250" data-brand="commodore">
+                    <img src="productos/Commodore64.jpg" alt="Commodore 64">
+                    <h3>Commodore 64 (keyboard y case)</h3>
+                    <p>Price: €250</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage"
+                    data-name="Apple II Computer" data-price="4500" data-brand="apple">
+                    <img src="productos/Apple_II.jpg" alt="Apple II Computer">
+                    <h3>Computer: Apple II</h3>
+                    <p>Price: €4500</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage"
+                    data-name="Apple Lisa Computer" data-price="3500" data-brand="apple">
+                    <img src="productos/ComputerApple Lisa.jpg" alt="Apple Lisa Computer">
+                    <h3>Computer: Apple Lisa</h3>
+                    <p>Price: €3500</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage" data-name="RLL Hard Drive"
+                    data-price="350" data-brand="generic" data-storage="0">
+                    <img src="productos/Hard drive (RLL).jpg" alt="RLL Hard Drive">
+                    <h3>Hard drive (RLL)</h3>
+                    <p>Price: €350</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage" data-name="SCSI Hard Drive"
+                    data-price="200" data-brand="generic" data-storage="0">
+                    <img src="productos/Hard drive (SCSI).jpg" alt="SCSI Hard Drive">
+                    <h3>Hard drive (SCSI)</h3>
+                    <p>Price: €200</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage" data-name="MFM Hard Drive"
+                    data-price="300" data-brand="generic" data-storage="0">
+                    <img src="productos/hard-drive-mfm.jpg" alt="MFM Hard Drive">
+                    <h3>Hard drive (MFM)</h3>
+                    <p>Price: €300</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="vintage"
+                    data-name="3dfx Voodoo Graphic Card" data-price="450" data-brand="3dfx">
+                    <img src="productos/3dfx-voodoo.jpg" alt="3dfx Voodoo Graphic Card">
+                    <h3>Graphic cards (3dfx Voodoo)</h3>
+                    <p>Price: €450</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="consoles" data-condition="vintage" data-name="Nintendo NES"
+                    data-price="200" data-brand="nintendo">
+                    <img src="productos/nes.jpg" alt="Nintendo NES">
+                    <h3>Nintendo NES (with wires and remote control)</h3>
+                    <p>Price: €100 - €300</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="consoles" data-condition="vintage" data-name="Sega Mega Drive"
+                    data-price="135" data-brand="sega">
+                    <img src="productos/sega-mega-drive.jpg" alt="Sega Mega Drive">
+                    <h3>Sega Mega Drive (1ª versión)</h3>
+                    <p>Price: €70 - €200</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="consoles" data-condition="vintage"
+                    data-name="Super Mario Bros Cartridge" data-price="200" data-brand="nintendo">
+                    <img src="productos/super-mario-bros.jpg" alt="Classic Super Mario Bros Cartridge">
+                    <h3>Classic video game cartridges (Super Mario Bros, Zelda)</h3>
+                    <p>Price: €200</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="consoles" data-condition="vintage" data-name="Game Boy DMG-01"
+                    data-price="150" data-brand="nintendo">
+                    <img src="productos/game-boy.jpg" alt="Game Boy DMG-01">
+                    <h3>Game Boy (modelo DMG-01)</h3>
+                    <p>Price: €150</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="peripherals" data-condition="vintage"
+                    data-name="Floppy Disk Drive" data-price="300" data-brand="generic" data-storage="0">
+                    <img src="productos/floppy-disk-drive.jpg" alt="Floppy Disk Drive">
+                    <h3>Floppy disk drives, CRT monitors y mechanical keyboard</h3>
+                    <p>Price: 300 €</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="peripherals" data-condition="vintage" data-name="Vintage Mice"
+                    data-price="27.5" data-brand="generic">
+                    <img src="productos/vintage-mice.jpg" alt="Vintage Mice">
+                    <h3>Ratones antiguos y cables/adaptadores</h3>
+                    <p>Price: 5 € - 50 €</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="components" data-condition="vintage" data-name="RAM EDO"
+                    data-price="50" data-brand="generic" data-storage="0">
+                    <img src="productos/ram.jpg" alt="RAM EDO">
+                    <h3>RAM (EDO, SIMM, SDRAM)</h3>
+                    <p>Price: 50 €</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="components" data-condition="vintage"
+                    data-name="ROM/EPROM Chips" data-price="10" data-brand="generic">
+                    <img src="productos/rom.jpg" alt="ROM/EPROM Chips">
+                    <h3>Chips ROM/EPROM</h3>
+                    <p>Price: 10 €</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="components" data-condition="vintage"
+                    data-name="Capacitors, resistors and connectors" data-price="10" data-brand="generic">
+                    <img src="productos/capacitors.jpg" alt="Electronic Components">
+                    <h3>Capacitors, resistors and connectors</h3>
+                    <p>Price: 10 €</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="computers" data-condition="refurbished"
+                    data-name="Intel Core i5-10400F" data-price="92" data-brand="intel">
+                    <img src="productos/cpu-i5.jpg" alt="Intel Core i5 Processor">
+                    <h3>CPUs: Intel Core i5-10400F (6 núcleos, 12 hilos)</h3>
+                    <p>Price: €73.60 - €110.40</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="refurbished"
+                    data-name="GTX 1660 Super" data-price="156.4" data-brand="nvidia">
+                    <img src="productos/gtx-1660.jpg" alt="GTX 1660 Super GPU">
+                    <h3>GPUs: GTX 1660 Super</h3>
+                    <p>Price: €128.80 - €184</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="refurbished"
+                    data-name="B450M para Ryzen" data-price="64.4" data-brand="amd">
+                    <img src="productos/b450m.jpg" alt="B450M Motherboard">
+                    <h3>B450M para Ryzen</h3>
+                    <p>Price: €46 - €82.80</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="refurbished" data-name="DDR4 16GB"
+                    data-price="46" data-brand="generic" data-storage="0">
+                    <img src="productos/ram-ddr4.jpg" alt="DDR4 16GB RAM">
+                    <h3>DDR4 16GB (2x8GB) 3200MHz</h3>
+                    <p>Price: €36.80 - €55.20</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="refurbished"
+                    data-name="SSD NVMe 1TB" data-price="60" data-brand="generic" data-storage="1tb">
+                    <img src="productos/ssd-nvme.jpg" alt="SSD NVMe 1TB">
+                    <h3>SSD NVMe 1TB Gen3 </h3>
+                    <p>Price: €46 - €73.60</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="refurbished"
+                    data-name="Corsair RM750" data-price="92" data-brand="corsair">
+                    <img src="productos/corsair-rm750.jpg" alt="Corsair RM750 Power Supply">
+                    <h3>Corsair RM750 80+ Gold</h3>
+                    <p>Price: €73.60 - €110.40</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Intel Core i9 14900K" data-price="0" data-brand="intel">
+                    <img src="productos/intel-core-i9.jpg" alt="Intel Core i9 Processor">
+                    <h3>Intel Core i9 14900K</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new" data-name="AMD Ryzen 7 7800X3D"
+                    data-price="0" data-brand="amd">
+                    <img src="productos/amd-ryzen.jpg" alt="AMD Ryzen 7 7800X3D">
+                    <h3>AMD Ryzen 7 7800X3D</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Intel Core Ultra 5 245K" data-price="0" data-brand="intel">
+                    <img src="productos/intel-core-ultra.jpg" alt="Intel Core Ultra 5 245K">
+                    <h3>Intel Core Ultra 5 245K</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Nvidia RTX 4080 Super" data-price="0" data-brand="nvidia">
+                    <img src="productos/nvidia-rtx-4080.jpg" alt="Nvidia RTX 4080 Super">
+                    <h3>Nvidia RTX 4080 Super</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new" data-name="Nvidia RTX 5090"
+                    data-price="0" data-brand="nvidia">
+                    <img src="productos/nvidia-rtx-5090.jpg" alt="Nvidia RTX 5090">
+                    <h3>Nvidia RTX 5090</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="AMD Raedon RX 7800 XT" data-price="0" data-brand="amd">
+                    <img src="prodcutos/amd-raedon.jpg" alt="AMD Raedon RX 7800 XT">
+                    <h3>AMD Raedon RX 7800 XT</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Corsair Vengeance DDR5 RGB" data-price="0" data-brand="corsair" data-storage="0">
+                    <img src="productos/corsair-vengeance-ddr5.jpg" alt="Corsair Vengeance DDR5 RAM">
+                    <h3>Corsair Vengeance DDR5 RGB 2 x 16 GB</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Kingston Fury DDR5 RGB" data-price="0" data-brand="kingston" data-storage="0">
+                    <img src="productos/kingstom-fury.jpg" alt="Kingston Fury DDR5 RGB RAM">
+                    <h3>Kingstom Fury DDR5 RGB 2 x 16 GB</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="computers" data-condition="new" data-name="Corsair SF750"
+                    data-price="0" data-brand="corsair">
+                    <img src="productos/corsair-sf750.jpg" alt="Corsair SF750 Power Supply">
+                    <h3>Corsair SF750 750W SFX 80 Plus Platinum Modular</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Nfortec Scutum X 850W" data-price="0" data-brand="nfortec">
+                    <img src="productos/nfortec-scutum.jpg" alt="Nfortec Scutum X 850W Power Supply">
+                    <h3>Nfortec Scutum X 850W 80 Plus Bronze Semi Modular</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="ASUS TUF Gaming B760 D5" data-price="0" data-brand="asus">
+                    <img src="productos/asus-tuf-gaming-b760-d5.jpg" alt="ASUS TUF Gaming B760 D5 Motherboard">
+                    <h3>ASUS TUF Gaming B760 D5</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Gigabyte B550 AORUS ELITE AX" data-price="0" data-brand="gigabyte">
+                    <img src="productos/gigabyte-b550-aorus-elite-ax.jpg"
+                        alt="Gigabyte B550 AORUS ELITE AX Motherboard">
+                    <h3>Gigabyte B550 AORUS ELITE AX</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="MSI MAG X670E TOMAHAWK WIFI" data-price="0" data-brand="msi">
+                    <img src="productos/msi-mag-x670e-tomahawk.jpg" alt="MSI MAG X670E TOMAHAWK WIFI Motherboard">
+                    <h3>MSI MAG X670E TOMAHAWK WIFI</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Corsair Ellite Capellix 115i" data-price="0" data-brand="corsair">
+                    <img src="productos/corsair-ellite-capellix.jpg" alt="Corsair Ellite Capellix 115i Cooler">
+                    <h3>Corsair Ellite Capellix 115i</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="computers" data-condition="new"
+                    data-name="Tempest Liquid Cooler 360RGB" data-price="0" data-brand="tempest">
+                    <img src="productos/tempest-liquid-cooler.jpg" alt="Tempest Liquid Cooler 360RGB">
+                    <h3>Tempest Liquid Cooler 360RGB</h3>
+                    <p>Price: Contact us for pricing</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p>&copy; 2025 Jurassic Parts Shop. All rights reserved.</p>
+</footer>
+
+</html>
