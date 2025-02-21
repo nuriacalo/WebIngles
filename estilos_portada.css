@@ -1,0 +1,106 @@
+/* INDEX */
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+/* Encabezado - contiene el logo y los enlaces a las redes sociales */
+#encabezado {
+    display: flex;
+    background-color: rgb(207, 199, 199);
+    padding: 10px;
+    justify-content: space-between; /* Alinea los elementos horizontalmente y los separa uniformemente */
+}
+
+/* Estilos de los enlaces del encabezado */
+#encabezado div a {
+    text-decoration: none;
+    /* Quita subrayado */
+}
+
+/* Menú de navegación */
+#menu {
+
+    border-top: 2px solid red; /* Borde superior en rojo */
+    border-bottom: 2px solid red; /* Borde inferior en rojo */
+}
+
+/* Estilos de la lista de navegación */
+#menu nav ul {
+    list-style: none;
+    /* Quita los puntos de la lista */
+    display: flex;
+    /* Alinea los elementos de la lista en fila */
+    gap: 30px;
+    /* Espacio entre los elementos de la lista */
+}
+
+/* Estilos de los elementos de la lista de navegación */
+#menu nav ul li {
+
+    background-color: rgb(167, 162, 162);
+
+    padding: 2px 20px;
+    /* Espacio interno para hacer los enlaces más grandes */
+    width: 150px;
+}
+
+/* Estilos de los enlaces del menú de navegación */
+#menu nav ul li a {
+    text-decoration: none;
+    /* Quita subrayado */
+    color: black;
+    /* Texto en color negro */
+    text-align: center;
+    margin-left: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Cambio de color al pasar el ratón sobre los enlaces del menú */
+#menu nav ul li a:hover {
+    color: red;
+    /* Cambia el color de la letra a rojo al pasar el ratón */
+}
+
+/* Contenido principal */
+main {
+    display: flex; /* Habilita el uso de flexbox */
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 10px; /* Espacio interno */
+}
+
+#video video {
+    border: 2px solid red;
+    border-radius: 10px; /* Agrega un borde redondeado */
+    padding: 10px;
+
+}
+
+/* Pie de página */
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+/* MEDIA QUERIES PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 468px) {
+    #encabezado {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #menu nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #menu nav ul li a {
+        width: auto;
+        text-align: center;
+    }
+}
