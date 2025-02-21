@@ -29,7 +29,6 @@
             </ul>
         </nav>
     </header>
-
     <main class="main-container">
         <aside class="products-filter">
             <h2>Filters</h2>
@@ -401,8 +400,20 @@
                 </div>
             </div>
         </section>
-    </main>
-    <script src="script.js"></script>
+        <div class="cart-container">
+            <div class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span>
+            </div>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items">
+                </ul>
+                <p>Total: <span id="cart-total">€0.00</span></p>
+            </div>
+        </div>
+</body>
+</main>
+<script src="script.js"></script>
 </body>
 <footer>
     <p>&copy; 2025 Jurassic Parts Shop. All rights reserved.</p>
