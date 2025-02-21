@@ -1,106 +1,80 @@
-/* INDEX */
-
-h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: italic;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Encabezado - contiene el logo y los enlaces a las redes sociales */
-#encabezado {
-    display: flex;
-    background-color: rgb(207, 199, 199);
-    padding: 10px;
-    justify-content: space-between; /* Alinea los elementos horizontalmente y los separa uniformemente */
-}
-
-/* Estilos de los enlaces del encabezado */
-#encabezado div a {
-    text-decoration: none;
-    /* Quita subrayado */
-}
-
-/* Menú de navegación */
-#menu {
-
-    border-top: 2px solid red; /* Borde superior en rojo */
-    border-bottom: 2px solid red; /* Borde inferior en rojo */
-}
-
-/* Estilos de la lista de navegación */
-#menu nav ul {
-    list-style: none;
-    /* Quita los puntos de la lista */
-    display: flex;
-    /* Alinea los elementos de la lista en fila */
-    gap: 30px;
-    /* Espacio entre los elementos de la lista */
-}
-
-/* Estilos de los elementos de la lista de navegación */
-#menu nav ul li {
-
-    background-color: rgb(167, 162, 162);
-
-    padding: 2px 20px;
-    /* Espacio interno para hacer los enlaces más grandes */
-    width: 150px;
-}
-
-/* Estilos de los enlaces del menú de navegación */
-#menu nav ul li a {
-    text-decoration: none;
-    /* Quita subrayado */
-    color: black;
-    /* Texto en color negro */
-    text-align: center;
-    margin-left: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-/* Cambio de color al pasar el ratón sobre los enlaces del menú */
-#menu nav ul li a:hover {
-    color: red;
-    /* Cambia el color de la letra a rojo al pasar el ratón */
-}
-
-/* Contenido principal */
-main {
-    display: flex; /* Habilita el uso de flexbox */
-    flex-direction: column; /* Alinea los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    padding: 10px; /* Espacio interno */
-}
-
-#video video {
-    border: 2px solid red;
-    border-radius: 10px; /* Agrega un borde redondeado */
-    padding: 10px;
-
-}
-
-/* Pie de página */
-footer {
-    background-color: red;
+header {
+    background-color: #333;
     color: white;
     text-align: center;
+    padding: 1rem;
 }
 
-/* MEDIA QUERIES PARA PANTALLAS PEQUEÑAS */
-@media (max-width: 468px) {
-    #encabezado {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+}
 
-    #menu nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+nav ul li {
+    margin: 0 15px;
+}
 
-    #menu nav ul li a {
-        width: auto;
-        text-align: center;
-    }
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-container {
+    display: flex; /* Centra la imagen si es más pequeña que el contenedor */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Se adapta al ancho de la pantalla */
+    max-width: 100vw; /* Máximo ancho de la pantalla */
+    overflow: hidden; /* Evita desbordamientos */
+}
+
+.image-container img {
+    width: 100%; /* Ajusta la imagen al contenedor */
+    height: auto; /* Mantiene la proporción original */
+    display: block;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label, input, textarea {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
