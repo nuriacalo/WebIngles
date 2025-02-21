@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jurassic Parts</title>
-    <link rel="stylesheet" href="Estilos_Jurassic_Parts.css">
+    <link rel="stylesheet" href="estilos_portada.css">
 </head>
+
 <body>
     <header>
-        <h1>Jurassic Parts</h1>
+        <nav>
+            <ul>
+                <li><a href="portada.html">Home</a></li>
+                <li>
+                    <a href="catalogo.html">Catalog</a>
+                    <ul>
+                        <li><a href="vintage">Vintage</a></li>
+                        <li><a href="refurbished">Refurbished</a></li>
+                        <li><a href="new">New</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="questions.html">FAQ</a></li>
+            </ul>
+        </nav>
     </header>
     <nav>
         <ul>
@@ -25,12 +42,12 @@
                 <img src="imagenes/jp_logo.png" alt="Tyrannosaurio cibernético">
             </div>
         </section>
-        
+
         <section id="sobre-nosotros">
             <h2>Sobre Nosotros</h2>
             <p>Jurassic Parts es una empresa especializada en repuestos para vehículos todo terreno y de aventura.</p>
         </section>
-        
+
         <section id="productos">
             <h2>Nuestros Productos</h2>
             <p>Ofrecemos una amplia variedad de repuestos para diferentes modelos de vehículos.</p>
@@ -41,23 +58,24 @@
                 <li>Kits de elevación</li>
             </ul>
         </section>
-        
+
         <section id="contacto">
             <h2>Contacto</h2>
             <p>Puedes contactarnos a través del siguiente formulario:</p>
             <form>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
-                
+
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required>
-                
+
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" required></textarea>
-                
+
                 <button type="submit">Enviar</button>
             </form>
         </section>
     </main>
 </body>
+
 </html>

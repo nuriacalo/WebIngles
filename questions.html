@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +14,79 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
-            background: #007BFF;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            padding: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #666;
+        }
+
+
         h1 {
             margin: 0;
-            padding: 20px 0; /* Added padding to create space for the header */
+            padding: 20px 0;
+            /* Added padding to create space for the header */
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
+
         .faq-section {
             background: #fff;
             margin: 20px 0;
@@ -36,26 +94,32 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         h2 {
             color: #007BFF;
             border-bottom: 2px solid #007BFF;
             padding-bottom: 10px;
         }
+
         .faq-question {
             font-weight: bold;
             margin: 15px 0 5px;
             cursor: pointer;
             transition: color 0.3s;
         }
+
         .faq-question:hover {
             color: #0056b3;
         }
+
         .faq-answer {
-            display: none; /* Initially hide the answers */
+            display: none;
+            /* Initially hide the answers */
             margin: 0 0 15px;
             padding-left: 15px;
             border-left: 3px solid #007BFF;
         }
+
         footer {
             text-align: center;
             padding: 20px 0;
@@ -67,10 +131,25 @@
         }
     </style>
 </head>
-<body>
 
+<body>
     <header>
-        <h1>Your Header Here</h1> <!-- Placeholder for your header -->
+        <nav>
+            <ul>
+                <li><a href="portada.html">Home</a></li>
+                <li>
+                    <a href="catalogo.html">Catalog</a>
+                    <ul>
+                        <li><a href="vintage">Vintage</a></li>
+                        <li><a href="refurbished">Refurbished</a></li>
+                        <li><a href="new">New</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="questions.html">FAQ</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
@@ -78,71 +157,112 @@
 
         <div class="faq-section">
             <h2>About Products</h2>
-            <div class="faq-question" onclick="toggleAnswer(this)">How can I check if a component is compatible with my project or device?</div>
-            <p class="faq-answer">You can check compatibility by visiting the manufacturer's website or by asking one of our staff members. They can provide guidance to ensure the component will work with your project or device.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">How can I check if a component is compatible with my
+                project or device?</div>
+            <p class="faq-answer">You can check compatibility by visiting the manufacturer's website or by asking one of
+                our staff members. They can provide guidance to ensure the component will work with your project or
+                device.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">Do you provide technical datasheets or detailed specifications for the products?</div>
-            <p class="faq-answer">Yes, all of our products come with technical datasheets that include detailed specifications, including component information, features, and recommended uses.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">Do you provide technical datasheets or detailed
+                specifications for the products?</div>
+            <p class="faq-answer">Yes, all of our products come with technical datasheets that include detailed
+                specifications, including component information, features, and recommended uses.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">What does it mean if a product is "refurbished"?</div>
-            <p class="faq-answer">A refurbished product is a pre-owned item that has been inspected, repaired if necessary, and restored to a fully functional condition. It is then tested to ensure it meets the original product's standards before being resold.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">What does it mean if a product is "refurbished"?
+            </div>
+            <p class="faq-answer">A refurbished product is a pre-owned item that has been inspected, repaired if
+                necessary, and restored to a fully functional condition. It is then tested to ensure it meets the
+                original product's standards before being resold.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">How do I choose the right type of resistor, capacitor, or transistor?</div>
-            <p class="faq-answer">Choosing the right component depends on your project's requirements. Consider factors such as resistance, capacitance, voltage rating, tolerance, and power dissipation. If you're unsure, our team can help you select the best option based on your specifications.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">How do I choose the right type of resistor,
+                capacitor, or transistor?</div>
+            <p class="faq-answer">Choosing the right component depends on your project's requirements. Consider factors
+                such as resistance, capacitance, voltage rating, tolerance, and power dissipation. If you're unsure, our
+                team can help you select the best option based on your specifications.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">What should I do if I need a component that is not listed on the website?</div>
-            <p class="faq-answer">If you can't find the component you're looking for, feel free to contact us. We’ll check availability and make every effort to source it for you as soon as possible.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">What should I do if I need a component that is not
+                listed on the website?</div>
+            <p class="faq-answer">If you can't find the component you're looking for, feel free to contact us. We’ll
+                check availability and make every effort to source it for you as soon as possible.</p>
         </div>
 
         <div class="faq-section">
             <h2>Orders and Purchases</h2>
             <div class="faq-question" onclick="toggleAnswer(this)">Is there a minimum order requirement?</div>
-            <p class="faq-answer">No, there isn’t. However, if your total is above 50€, you will receive free shipping on your order.</p>
+            <p class="faq-answer">No, there isn’t. However, if your total is above 50€, you will receive free shipping
+                on your order.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">Can I modify or cancel an order after placing it?</div>
-            <p class="faq-answer">Yes, you can modify or cancel your order within the first 12 hours of placing it. After that time, the order is processed and cannot be changed.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">Can I modify or cancel an order after placing it?
+            </div>
+            <p class="faq-answer">Yes, you can modify or cancel your order within the first 12 hours of placing it.
+                After that time, the order is processed and cannot be changed.</p>
         </div>
 
         <div class="faq-section">
             <h2>Shipping and Returns</h2>
-            <div class="faq-question" onclick="toggleAnswer(this)">How long does shipping take, and what are the costs?</div>
-            <p class="faq-answer">It depends on the type of shipping you choose. If it’s a national shipment, it takes about 3-5 working days. If it’s an international shipment, it takes about 6-12 working days.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">How long does shipping take, and what are the costs?
+            </div>
+            <p class="faq-answer">It depends on the type of shipping you choose. If it’s a national shipment, it takes
+                about 3-5 working days. If it’s an international shipment, it takes about 6-12 working days.</p>
 
             <div class="faq-question" onclick="toggleAnswer(this)">Do you offer international shipping?</div>
-            <p class="faq-answer">Yes, we do. We offer international shipping to a wide range of countries. Shipping times and costs vary depending on the destination, but generally, it takes about 6-12 working days for international orders. You can check the exact shipping costs at checkout, based on your location.</p>
+            <p class="faq-answer">Yes, we do. We offer international shipping to a wide range of countries. Shipping
+                times and costs vary depending on the destination, but generally, it takes about 6-12 working days for
+                international orders. You can check the exact shipping costs at checkout, based on your location.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">What should I do if I receive a damaged or defective product?</div>
-            <p class="faq-answer">If your product arrives damaged or defective, please contact us immediately with photos of the issue. We will assist you in resolving the problem, whether that means issuing a replacement or processing a refund.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">What should I do if I receive a damaged or defective
+                product?</div>
+            <p class="faq-answer">If your product arrives damaged or defective, please contact us immediately with
+                photos of the issue. We will assist you in resolving the problem, whether that means issuing a
+                replacement or processing a refund.</p>
 
             <div class="faq-question" onclick="toggleAnswer(this)">What is your return and exchange policy?</div>
-            <p class="faq-answer">We offer a 30-day return policy for most products. The item must be in its original condition, and you’ll need the receipt or proof of purchase. Some exclusions may apply, so please refer to our full return policy page for more details.</p>
+            <p class="faq-answer">We offer a 30-day return policy for most products. The item must be in its original
+                condition, and you’ll need the receipt or proof of purchase. Some exclusions may apply, so please refer
+                to our full return policy page for more details.</p>
 
             <div class="faq-question" onclick="toggleAnswer(this)">How can I track my order?</div>
-            <p class="faq-answer">Once your order is shipped, we’ll provide you with a tracking number. You can use this number on the shipping carrier's website to track your order.</p>
+            <p class="faq-answer">Once your order is shipped, we’ll provide you with a tracking number. You can use this
+                number on the shipping carrier's website to track your order.</p>
         </div>
 
         <div class="faq-section">
             <h2>Warranty and Technical Support</h2>
             <div class="faq-question" onclick="toggleAnswer(this )">Do the components come with a warranty?</div>
-            <p class="faq-answer">Yes, all our components come with a minimum one-year warranty. However, the exact warranty period may vary depending on the product. You can check the specific warranty details for each item on its product page.</p>
+            <p class="faq-answer">Yes, all our components come with a minimum one-year warranty. However, the exact
+                warranty period may vary depending on the product. You can check the specific warranty details for each
+                item on its product page.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">Do you offer technical support to help with installation or usage?</div>
-            <p class="faq-answer">Yes, we offer technical support for installation and product usage. If you need assistance, don’t hesitate to contact our support team, and we’ll be happy to help.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">Do you offer technical support to help with
+                installation or usage?</div>
+            <p class="faq-answer">Yes, we offer technical support for installation and product usage. If you need
+                assistance, don’t hesitate to contact our support team, and we’ll be happy to help.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">What should I do if the product stops working within the warranty period?</div>
-            <p class="faq-answer">If your product stops working within the warranty period, please contact us with the details of the issue. We’ll guide you through the process of returning or replacing the product, depending on the warranty terms.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">What should I do if the product stops working within
+                the warranty period?</div>
+            <p class="faq-answer">If your product stops working within the warranty period, please contact us with the
+                details of the issue. We’ll guide you through the process of returning or replacing the product,
+                depending on the warranty terms.</p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">Can you assist me in designing a circuit or project using the components you sell?</div>
-            <p class="faq-answer">Yes, we offer assistance for project designs and circuit building. If you need help, simply reach out to us with your project details, and our experts will provide guidance to ensure you get the right components.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">Can you assist me in designing a circuit or project
+                using the components you sell?</div>
+            <p class="faq-answer">Yes, we offer assistance for project designs and circuit building. If you need help,
+                simply reach out to us with your project details, and our experts will provide guidance to ensure you
+                get the right components.</p>
         </div>
 
         <div class="faq-section">
             <h2>Promotions and Offers</h2>
             <div class="faq-question" onclick="toggleAnswer(this)">Do you offer regular discounts or promotions?</div>
-            <p class="faq-answer">Yes, we offer discounts on all of our refurbished products. Additionally, we regularly provide discounts and promotions on our newer products. Be sure to check our website for current offers!</p>
+            <p class="faq-answer">Yes, we offer discounts on all of our refurbished products. Additionally, we regularly
+                provide discounts and promotions on our newer products. Be sure to check our website for current offers!
+            </p>
 
-            <div class="faq-question" onclick="toggleAnswer(this)">Can I subscribe to a newsletter to receive updates and offers?</div>
-            <p class="faq-answer">Absolutely! You can subscribe to our newsletter by entering your email at the bottom of our website. We’ll keep you informed about new arrivals, exclusive offers, promotions, and the latest updates.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">Can I subscribe to a newsletter to receive updates
+                and offers?</div>
+            <p class="faq-answer">Absolutely! You can subscribe to our newsletter by entering your email at the bottom
+                of our website. We’ll keep you informed about new arrivals, exclusive offers, promotions, and the latest
+                updates.</p>
         </div>
     </div>
 
@@ -161,4 +281,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -315,20 +315,13 @@ nav ul li ul li a:hover {
 
 /* Contenedor de filtros */
 .products-filter {
-    width: 300px;
-    /* Ancho reducido */
+    width: 300px; /* Ancho reducido */
     padding: 1rem;
     border-right: 1px solid #c9c3ba;
     background-color: #f8f0e3;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    margin: 20px 12px;
-    /* Margen superior e inferior */
-    overflow-y: auto;
-    /* Para permitir el desplazamiento si el contenido es largo */
-    max-height: 80vh;
-    /* Altura máxima del contenedor de filtros */
-    display: auto;
-    flex-direction: column;
+    margin: 20px 12px; /* Margen superior e inferior */
+    align-self: flex-start; /* Evita que se estire verticalmente */
 }
 
 /* Botones de aplicar y limpiar filtros */

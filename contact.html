@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +17,67 @@
             min-height: 100vh;
         }
 
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            padding: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #666;
+        }
+
         .container {
-            max-width: 90%; /* Ancho por defecto */
+            max-width: 90%;
+            /* Ancho por defecto */
             margin: 10px auto;
             padding: 20px;
             background-color: #fff;
@@ -58,34 +118,65 @@
         #map {
             width: 100%;
             margin-top: 20px;
-            overflow: hidden; /* Para evitar que la imagen se desborde */
+            overflow: hidden;
+            /* Para evitar que la imagen se desborde */
         }
 
         #map img {
-            width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-            display: block; /* Evita espacios en blanco debajo de la imagen */
+            width: 100%;
+            /* La imagen ocupa todo el ancho del contenedor */
+            display: block;
+            /* Evita espacios en blanco debajo de la imagen */
         }
 
         /* Media queries para diferentes tamaños de pantalla */
-        @media (min-width: 768px) { /* Para pantallas medianas y grandes */
+        @media (min-width: 768px) {
+
+            /* Para pantallas medianas y grandes */
             .container {
-               width: 1200px; /* Ancho mayor en pantallas grandes */
+                width: 1200px;
+                /* Ancho mayor en pantallas grandes */
             }
+
             #map {
-                height: 500px; /* Ajusta la altura del mapa si es necesario */
+                height: 500px;
+                /* Ajusta la altura del mapa si es necesario */
             }
         }
 
-        @media (max-width: 600px) { /* Para pantallas pequeñas */
+        @media (max-width: 600px) {
+
+            /* Para pantallas pequeñas */
             .container {
                 padding: 10px;
             }
+
             #map {
-                height: 300px; /* Ajusta la altura del mapa para pantallas pequeñas */
+                height: 300px;
+                /* Ajusta la altura del mapa para pantallas pequeñas */
             }
         }
     </style>
 </head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="portada.html">Home</a></li>
+            <li>
+                <a href="catalogo.html">Catalog</a>
+                <ul>
+                    <li><a href="vintage">Vintage</a></li>
+                    <li><a href="refurbished">Refurbished</a></li>
+                    <li><a href="new">New</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="questions.html">FAQ</a></li>
+        </ul>
+    </nav>
+</header>
+
 <body>
 
     <div class="container">
@@ -93,7 +184,8 @@
 
         <div class="contact-info">
             <h2>Email</h2>
-            <p>If you have any questions or issues, feel free to write to us at: <a href="mailto:jurassicparts@component.com">jurassicparts@component.com</a></p>
+            <p>If you have any questions or issues, feel free to write to us at: <a
+                    href="mailto:jurassicparts@component.com">jurassicparts@component.com</a></p>
         </div>
 
         <div class="contact-info">
@@ -121,4 +213,5 @@
     </div>
 
 </body>
+
 </html>

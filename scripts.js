@@ -1,4 +1,3 @@
-// Datos de productos
 const products = [
     { id: 1, name: "Intel 8086 Processor (1980s)", price: 110, category: "vintage", type: "processors", brand: "intel", image: "productos/intel-80286.jpg" },
     { id: 2, name: "IBM PC XT/AT Motherboard (1980s)", price: 350, category: "vintage", type: "motherboards", brand: "ibm", image: "productos/IBM_PC_Motherboard_(1981).jpg" },
@@ -24,21 +23,21 @@ const products = [
     { id: 22, name: "DDR4 16GB (2x8GB) 3200MHz", price: 36.80, category: "refurbished", type: "ram", brand: "corsair", image: "productos/ram-ddr4.jpg" },
     { id: 23, name: "SSD NVMe 1TB Gen3", price: 46, category: "refurbished", type: "storage", brand: "samsung", image: "productos/ssd-nvme.jpg" },
     { id: 24, name: "Corsair RM750 80+ Gold", price: 73.60, category: "refurbished", type: "accessories", brand: "corsair", image: "productos/corsair-sf750.jpg" },
-    { id: 25, name: "Intel Core i9 14900K", price: "Contact us for pricing", category: "new", type: "processors", brand: "intel", image: "productos/intel-core-i9.jpg" },
-    { id: 26, name: "AMD Ryzen 7 7800X3D", price: "Contact us for pricing", category: "new", type: "processors", brand: "amd", image: "productos/amd-ryzen.jpg" },
-    { id: 27, name: "Intel Core Ultra 5 245K", price: "Contact us for pricing", category: "new", type: "processors", brand: "intel", image: "productos/intel-core-ultra.jpg" },
-    { id: 28, name: "Nvidia RTX 4080 Super", price: "Contact us for pricing", category: "new", type: "graphic-cards", brand: "nvidia", image: "productos/nvidia-rtx-4080.jpg" },
-    { id: 29, name: "Nvidia RTX 5090", price: "Contact us for pricing", category: "new", type: "graphic-cards", brand: "nvidia", image: "productos/nvidia-rtx-5090.jpg" },
-    { id: 30, name: "AMD Radeon RX 7800 XT", price: "Contact us for pricing", category: "new", type: "graphic-cards", brand: "amd", image: "productos/amd-raedon.jpg" },
-    { id: 31, name: "Corsair Vengeance DDR5 RGB 2 x 16 GB", price: "Contact us for pricing", category: "new", type: "ram", brand: "corsair", image: "productos/corsair-vengeance-ddr5.jpg" },
-    { id: 32, name: "Kingston Fury DDR5 RGB 2 x 16 GB", price: "Contact us for pricing", category: "new", type: "ram", brand: "kingston", image: "productos/kingstom-fury.jpg" },
-    { id: 33, name: "Corsair SF750 750W SFX 80 Plus Platinum Modular", price: "Contact us for pricing", category: "new", type: "computers", brand: "corsair", image: "productos/corsair-sf750.jpg" },
-    { id: 34, name: "Nfortec Scutum X 850W 80 Plus Bronze Semi Modular", price: "Contact us for pricing", category: "new", type: "computers", brand: "nfortec", image: "productos/nfortec-scutum.jpg" },
-    { id: 35, name: "ASUS TUF Gaming B760 D5", price: "Contact us for pricing", category: "new", type: "computers", brand: "asus", image: "productos/asus-tuf-gaming-b760-d5.jpg" },
-    { id: 36, name: "Gigabyte B550 AORUS ELITE AX", price: "Contact us for pricing", category: "new", type: "computers", brand: "gigabyte", image: "productos/gigabyte-b550-aorus-elite-ax.jpg" },
-    { id: 37, name: "MSI MAG X670E TOMAHAWK WIFI", price: "Contact us for pricing", category: "new", type: "computers", brand: "msi", image: "productos/msi-mag-x670e-tomahawk.jpg" },
-    { id: 38, name: "Corsair Ellite Capellix 115i", price: "Contact us for pricing", category: "new", type: "computers", brand: "corsair", image: "productos/corsair-ellite-capellix.jpg" },
-    { id: 38, name: "Tempest Liquid Cooler 360RGB", price: "Contact us for pricing", category: "new", type: "computers", brand: "tempest", image: "productos/tempest-liquid-cooler.jpg" }
+    { id: 25, name: "Intel Core i9 14900K", price: 650, category: "new", type: "processors", brand: "intel", image: "productos/intel-core-i9.jpg" },
+    { id: 26, name: "AMD Ryzen 7 7800X3D", price: 450, category: "new", type: "processors", brand: "amd", image: "productos/amd-ryzen.jpg" },
+    { id: 27, name: "Intel Core Ultra 5 245K", price: 300, category: "new", type: "processors", brand: "intel", image: "productos/intel-core-ultra.jpg" },
+    { id: 28, name: "Nvidia RTX 4080 Super", price: 1200, category: "new", type: "graphic-cards", brand: "nvidia", image: "productos/nvidia-rtx-4080.jpg" },
+    { id: 29, name: "Nvidia RTX 5090", price: 1800, category: "new", type: "graphic-cards", brand: "nvidia", image: "productos/nvidia-rtx-5090.jpg" },
+    { id: 30, name: "AMD Radeon RX 7800 XT", price: 550, category: "new", type: "graphic-cards", brand: "amd", image: "productos/amd-raedon.jpg" },
+    { id: 31, name: "Corsair Vengeance DDR5 RGB 2 x 16 GB", price: 150, category: "new", type: "ram", brand: "corsair", image: "productos/corsair-vengeance-ddr5.jpg" },
+    { id: 32, name: "Kingston Fury DDR5 RGB 2 x 16 GB", price: 140, category: "new", type: "ram", brand: "kingston", image: "productos/kingstom-fury.jpg" },
+    { id: 33, name: "Corsair SF750 750W SFX 80 Plus Platinum Modular", price: 160, category: "new", type: "computers", brand: "corsair", image: "productos/corsair-sf750.jpg" },
+    { id: 34, name: "Nfortec Scutum X 850W 80 Plus Bronze Semi Modular", price: 100, category: "new", type: "computers", brand: "nfortec", image: "productos/nfortec-scutum.jpg" },
+    { id: 35, name: "ASUS TUF Gaming B760 D5", price: 200, category: "new", type: "computers", brand: "asus", image: "productos/asus-tuf-gaming-b760-d5.jpg" },
+    { id: 36, name: "Gigabyte B550 AORUS ELITE AX", price: 180, category: "new", type: "computers", brand: "gigabyte", image: "productos/gigabyte-b550-aorus-elite-ax.jpg" },
+    { id: 37, name: "MSI MAG X670E TOMAHAWK WIFI", price: 350, category: "new", type: "computers", brand: "msi", image: "productos/msi-mag-x670e-tomahawk.jpg" },
+    { id: 38, name: "Corsair Ellite Capellix 115i", price: 120, category: "new", type: "computers", brand: "corsair", image: "productos/corsair-ellite-capellix.jpg" },
+    { id: 39, name: "Tempest Liquid Cooler 360RGB", price: 110, category: "new", type: "computers", brand: "tempest", image: "productos/tempest-liquid-cooler.jpg" }
 ];
 
 // Carrito de compras
