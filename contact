@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 90%; /* Ancho por defecto */
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        #map {
+            width: 100%;
+            margin-top: 20px;
+            overflow: hidden; /* Para evitar que la imagen se desborde */
+        }
+
+        #map img {
+            width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+            display: block; /* Evita espacios en blanco debajo de la imagen */
+        }
+
+        /* Media queries para diferentes tamaños de pantalla */
+        @media (min-width: 768px) { /* Para pantallas medianas y grandes */
+            .container {
+               width: 1200px; /* Ancho mayor en pantallas grandes */
+            }
+            #map {
+                height: 500px; /* Ajusta la altura del mapa si es necesario */
+            }
+        }
+
+        @media (max-width: 600px) { /* Para pantallas pequeñas */
+            .container {
+                padding: 10px;
+            }
+            #map {
+                height: 300px; /* Ajusta la altura del mapa para pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <div class="contact-info">
+            <h2>Email</h2>
+            <p>If you have any questions or issues, feel free to write to us at: <a href="mailto:jurassicparts@component.com">jurassicparts@component.com</a></p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Chat</h2>
+            <p>Talk to our virtual assistant or one of our agents.</p>
+            <p>Monday to Friday from 9:00 AM to 8:00 PM</p>
+            <p>Saturday from 9:00 AM to 2:00 PM</p>
+        </div>
+
+        <div class="contact-info">
+            <h2>WhatsApp</h2>
+            <p>Send us a WhatsApp and receive responses on your mobile.</p>
+            <p><a href="https://wa.me/34666999888">666 999 888</a> (Click to chat)</p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Phone</h2>
+            <p>If you need to speak by phone, call us at <a href="tel:968101010">968 101 010</a></p>
+            <p>Monday to Friday from 9:00 AM to 2:00 PM and 4:00 PM to 8:00 PM</p>
+        </div>
+
+        <div id="map">
+            <img src="Captura desde 2025-02-21 12-18-05.png" alt="Mapa de nuestra oficina">
+        </div>
+    </div>
+
+</body>
+</html>
