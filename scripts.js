@@ -88,6 +88,33 @@ function addToCart(productId) {
     }
 }
 
+//Carrito
+document.addEventListener('DOMContentLoaded', function () {
+    const cartIcon = document.getElementById('cart-icon');
+    const cartDropdown = document.getElementById('cart-dropdown');
+    const closeCart = document.getElementById('close-cart');
+
+    // Abrir el carrito al hacer clic en el ícono
+    cartIcon.addEventListener('click', function (e) {
+        e.stopPropagation(); // Añade esta línea
+        cartDropdown.classList.toggle('active');
+    });
+
+    // Cerrar el carrito al hacer clic en el botón de cerrar
+    document.addEventListener('click', function (e) {
+        if (!cartDropdown.contains(e.target) && !cartIcon.contains(e.target)) {
+            cartDropdown.classList.remove('active');
+        }
+    });
+
+    // Cerrar el carrito al hacer clic fuera de él
+    document.addEventListener('click', function (e) {
+        if (!cartDropdown.contains(e.target) && !cartIcon.contains(e.target)) {
+            cartDropdown.classList.remove('active');
+        }
+    });
+});
+
 // Función para actualizar el carrito
 function updateCart() {
     const cartItems = document.getElementById('cart-items');
@@ -97,14 +124,23 @@ function updateCart() {
     cartItems.innerHTML = '';
     cart.forEach((item, index) => {
         const li = document.createElement('li');
+        li.classList.add('cart-item');
+
         const productPrice = isNaN(item.product.price) ? item.product.price : item.product.price.toFixed(2) + "€";
         li.innerHTML = `
-            <span>${item.product.name}</span>
-            <span>${productPrice}</span>
-            <span>Cantidad: ${item.quantity}</span>
-            <button onclick="increaseQuantity(${index})">+</button>
-            <button onclick="decreaseQuantity(${index})">-</button>
-            <button onclick="removeFromCart(${index})">Eliminar</button>
+            <img src="${item.product.image}" alt="${item.product.name}" class="cart-item-image">
+            <div class="cart-item-details">
+                <span class="cart-item-name">${item.product.name}</span>
+                <div class="cart-item-quantity-price">
+                    <div class="cart-item-quantity-controls">
+                        <button onclick="decreaseQuantity(${index})">-</button>
+                        <span class="cart-item-quantity">${item.quantity}</span>
+                        <button onclick="increaseQuantity(${index})">+</button>
+                    </div>
+                    <span class="cart-item-price">${productPrice}</span>
+                </div>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${index})">&times;</button>
         `;
         cartItems.appendChild(li);
     });
@@ -112,6 +148,50 @@ function updateCart() {
     cartTotalElement.textContent = `${cartTotal.toFixed(2)}€`;
     cartCountElement.textContent = cartCount;
 }
+
+// Función para aumentar la cantidad de un producto
+function increaseQuantity(index) {
+    cart[index].quantity++;
+    cartCount++;
+    cartTotal += cart[index].product.price || 0;
+    updateCart();
+}
+
+// Función para disminuir la cantidad de un producto
+function decreaseQuantity(index) {
+    if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+        cartCount--;
+        cartTotal -= cart[index].product.price || 0;
+    } else {
+        removeFromCart(index); // Elimina el producto si la cantidad es 0
+    }
+    updateCart();
+}
+
+// Función para eliminar un producto del carrito
+function removeFromCart(index) {
+    cartCount -= cart[index].quantity;
+    cartTotal -= cart[index].product.price * cart[index].quantity || 0;
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Función para manejar el botón de "Comprar"
+document.getElementById('checkout-button').addEventListener('click', function () {
+    if (cart.length === 0) {
+        alert("Tu carrito está vacío. ¡Añade algunos productos antes de comprar!");
+    } else {
+        alert("¡Gracias por tu compra! Total: " + cartTotal.toFixed(2) + "€");
+        // Vaciar el carrito después de la compra
+        cart = [];
+        cartCount = 0;
+        cartTotal = 0;
+        updateCart();
+    }
+});
+
+
 
 function increaseQuantity(index) {
     cart[index].quantity++;
@@ -156,6 +236,29 @@ function renderProducts() {
         catalogContainer.appendChild(productCard);
     });
 }
+
+// Función para aplicar filtros
+document.querySelector('.apply-filters').addEventListener('click', function () {
+    const selectedFilters = [];
+    // Obtener los filtros seleccionados
+    document.querySelectorAll('.filters input[type="checkbox"]:checked').forEach(checkbox => {
+        selectedFilters.push(checkbox.value);
+    });
+    console.log("Filtros aplicados:", selectedFilters);
+    // Aquí puedes añadir la lógica para filtrar los productos
+    alert("Filtros aplicados: " + selectedFilters.join(", "));
+});
+
+// Función para limpiar filtros
+document.querySelector('.clear-filters').addEventListener('click', function () {
+    // Desmarcar todos los checkboxes
+    document.querySelectorAll('.filters input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    console.log("Filtros limpiados");
+    // Aquí puedes añadir la lógica para mostrar todos los productos
+    alert("Filtros limpiados");
+});
 
 // Llamar a la función para renderizar productos al cargar la página
 renderProducts();

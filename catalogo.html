@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vintage Tech Shop - Catálogo</title>
+        <link rel="stylesheet" href="catalogo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+        <header>
+                <nav>
+                        <ul>
+                                <li><a href="/">Home</a></li>
+                                <li>
+                                        <a href="/catalog">Catalog</a>
+                                        <ul>
+                                                <li><a href="/catalog/vintage">Vintage</a></li>
+                                                <li><a href="/catalog/refurbished">Refurbished</a></li>
+                                                <li><a href="/catalog/new">New</a></li>
+                                        </ul>
+                                </li>
+                                <li><a href="/us">Us</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/faq">FAQ</a></li>
+                        </ul>
+                </nav>
+        </header>
+        <main class="main-container">
+                <aside class="products-filter">
+                        <h2>Filters</h2>
+                        <div class="filters">
+                                <!-- Filtros por categoría -->
+                                <h3>Category</h3>
+                                <ul id="category-filter">
+                                        <li><input type="checkbox" id="category-all" data-category="all"><label
+                                                        for="category-all">All</label></li>
+                                        <li><input type="checkbox" id="category-computers"
+                                                        data-category="computers"><label
+                                                        for="category-computers">Computers & Components</label></li>
+                                        <li><input type="checkbox" id="category-consoles"
+                                                        data-category="consoles"><label for="category-consoles">Retro
+                                                        Consoles & Videogames</label></li>
+                                        <li><input type="checkbox" id="category-peripherals"
+                                                        data-category="peripherals"><label
+                                                        for="category-peripherals">Peripherals & Accessories</label>
+                                        </li>
+                                        <li><input type="checkbox" id="category-components"
+                                                        data-category="components"><label
+                                                        for="category-components">Small Parts & Components</label></li>
+                                </ul>
+
+                                <!-- Filtros por rango de precio -->
+                                <h3>Price Range</h3>
+                                <label for="price-range">Price:</label>
+                                <input type="range" id="price-range" min="5" max="4500" value="500" step="5">
+                                <p id="price-label">€5 - €4500</p>
+
+                                <!-- Filtros por condición -->
+                                <h3>Condition</h3>
+                                <ul id="condition-filter">
+                                        <li><input type="checkbox" id="condition-all" data-condition="all"><label
+                                                        for="condition-all">All</label></li>
+                                        <li><input type="checkbox" id="condition-vintage"
+                                                        data-condition="vintage"><label
+                                                        for="condition-vintage">Vintage</label></li>
+                                        <li><input type="checkbox" id="condition-refurbished"
+                                                        data-condition="refurbished"><label
+                                                        for="condition-refurbished">Refurbished</label></li>
+                                        <li><input type="checkbox" id="condition-new" data-condition="new"><label
+                                                        for="condition-new">New</label></li>
+                                </ul>
+
+                                <!-- Filtros por marca -->
+                                <h3>Brand</h3>
+                                <ul id="brand-filter">
+                                        <li><input type="checkbox" id="brand-all" data-brand="all"><label
+                                                        for="brand-all">All</label>
+                                        </li>
+                                        <li><input type="checkbox" id="brand-intel" data-brand="intel"><label
+                                                        for="brand-intel">Intel</label></li>
+                                        <li><input type="checkbox" id="brand-amd" data-brand="amd"><label
+                                                        for="brand-amd">AMD</label>
+                                        </li>
+                                        <li><input type="checkbox" id="brand-nvidia" data-brand="nvidia"><label
+                                                        for="brand-nvidia">Nvidia</label></li>
+                                        <li><input type="checkbox" id="brand-corsair" data-brand="corsair"><label
+                                                        for="brand-corsair">Corsair</label></li>
+                                </ul>
+
+                                <!-- Filtros por capacidad -->
+                                <h3>Storage Capacity</h3>
+                                <ul id="storage-filter">
+                                        <li><input type="checkbox" id="storage-all" data-storage="all"><label
+                                                        for="storage-all">All</label>
+                                        </li>
+                                        <li><input type="checkbox" id="storage-1tb" data-storage="1tb"><label
+                                                        for="storage-1tb">1
+                                                        TB</label></li>
+                                        <li><input type="checkbox" id="storage-2tb" data-storage="2tb"><label
+                                                        for="storage-2tb">2
+                                                        TB</label></li>
+                                        <li><input type="checkbox" id="storage-500gb" data-storage="500gb"><label
+                                                        for="storage-500gb">500
+                                                        GB</label></li>
+                                </ul>
+
+                                <!-- Filtros por tipo de conexión -->
+                                <h3>Connection Type</h3>
+                                <ul id="connection-filter">
+                                        <li><input type="checkbox" id="connection-all" data-connection="all"><label
+                                                        for="connection-all">All</label></li>
+                                        <li><input type="checkbox" id="connection-sata" data-connection="sata"><label
+                                                        for="connection-sata">SATA</label></li>
+                                        <li><input type="checkbox" id="connection-nvme" data-connection="nvme"><label
+                                                        for="connection-nvme">NVMe</label></li>
+                                        <li><input type="checkbox" id="connection-usb" data-connection="usb"><label
+                                                        for="connection-usb">USB</label></li>
+                                </ul>
+                        </div>
+                        <!-- Botones de aplicar y limpiar filtros -->
+                        <div class="filter-buttons">
+                                <button class="apply-filters">Aplicar Filtros</button>
+                                <button class="clear-filters">Limpiar Filtros</button>
+                        </div>
+                </aside>
+
+                <section class="catalog-section">
+                        <h2>Product Catalog</h2>
+                        <div class="catalog-container" />
+
+                </section>
+                <div class="cart-container">
+                        <div class="cart-icon" id="cart-icon">
+                                <i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span>
+                        </div>
+                        <div class="cart-dropdown" id="cart-dropdown">
+                                <h3>Your Cart <button class="close-cart" id="close-cart">&times;</button></h3>
+                                <ul id="cart-items">
+                                        <!-- Los productos se añadirán dinámicamente aquí -->
+                                </ul>
+                                <p>Total: <span id="cart-total">0.00€</span></p>
+                                <button id="checkout-button" class="checkout-button">Comprar</button>
+                        </div>
+                </div>
+</body>
+</main>
+<script src="scripts.js"></script>
+</body>
+<footer>
+        <p>&copy; 2025 Jurassic Parts Shop. All rights reserved.</p>
+</footer>
+
+</html>
