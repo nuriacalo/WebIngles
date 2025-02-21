@@ -92,13 +92,13 @@ nav ul li ul li a:hover {
     background-color: #3d342e;
     color: #f8f0e3;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 24px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: max-content;
+    height: max-content;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
