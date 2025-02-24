@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Vintage - Jurassic Parts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        .producto img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catálogo Vintage</h1>
+    <div class="catalogo" id="catalogo"></div>
+
+    <script>
+        const productos = [
+              { id: 1, name: "Intel 8086 Processor (1980s)", price: 110, category: "vintage", type: "processors", brand: "intel", image: "productos/intel-80286.jpg" },
+              { id: 2, name: "IBM PC XT/AT Motherboard (1980s)", price: 350, category: "vintage", type: "motherboards", brand: "ibm", image: "productos/IBM_PC_Motherboard_(1981).jpg" },
+              { id: 3, name: "Commodore 64 (keyboard and case)", price: 250, category: "vintage", type: "consoles", brand: "commodore", image: "productos/Commodore64.jpg" },
+              { id: 4, name: "Apple II Computer", price: 4500, category: "vintage", type: "consoles", brand: "apple", image: "productos/Apple_II.jpg" },
+              { id: 5, name: "Apple Lisa", price: 3500, category: "vintage", type: "consoles", brand: "apple", image: "productos/ComputerApple Lisa.jpg" },
+              { id: 6, name: "Hard drive (RLL)", price: 350, category: "vintage", type: "storage", brand: "ibm", image: "productos/Hard drive (RLL).jpg" },
+              { id: 7, name: "Hard drive (SCSI)", price: 200, category: "vintage", type: "storage", brand: "ibm", image: "productos/Hard drive (SCSI).jpg" },
+              { id: 8, name: "Hard drive (MFM)", price: 300, category: "vintage", type: "storage", brand: "ibm", image: "productos/hard-drive-mfm.jpg" },
+              { id: 9, name: "3dfx Voodoo Graphic Card", price: 450, category: "vintage", type: "graphic-cards", brand: "nvidia", image: "productos/3dfx-voodoo.jpg" },
+              { id: 10, name: "Nintendo NES (with wires and remote control)", price: 100, category: "retro", type: "consoles", brand: "nintendo", image: "productos/nes.jpg" },
+              { id: 11, name: "Sega Mega Drive (1st version)", price: 70, category: "retro", type: "consoles", brand: "sega", image: "productos/sega-mega-drive.jpg" },
+              { id: 12, name: "Classic Video Game Cartridges (Super Mario Bros, Zelda)", price: 200, category: "retro", type: "accessories", brand: "nintendo", image: "productos/super-mario-bros.jpg" },
+              { id: 13, name: "Game Boy (model DMG-01)", price: 150, category: "retro", type: "consoles", brand: "nintendo", image: "productos/game-boy.jpg" },
+              { id: 14, name: "Floppy Disk Drives, CRT Monitors, and Mechanical Keyboard", price: 300, category: "vintage", type: "accessories", brand: "ibm", image: "productos/floppy-disk-drive.jpg" },
+              { id: 15, name: "Vintage Mice and Cables/Adapters", price: 5, category: "vintage", type: "accessories", brand: "ibm", image: "productos/vintage-mice.jpg" },
+    ];
+
+        function mostrarCatalogo() {
+            const catalogo = document.getElementById("catalogo");
+            productos.forEach(producto => {
+                const div = document.createElement("div");
+                div.classList.add("producto");
+                div.innerHTML = `
+                    <img src="${producto.image}" alt="${producto.name}">
+                    <h3>${producto.name}</h3>
+                    <p>Precio: $${producto.price}</p>
+                    <p>Marca: ${producto.brand}</p>
+                `;
+                catalogo.appendChild(div);
+            });
+        }
+
+        mostrarCatalogo();
+    </script>
+</body>
+</html>
