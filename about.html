@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -25,22 +25,20 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
-            overflow-x: hidden; /* Evita scroll horizontal innecesario */
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #000;
-            color: #FFF;
-            padding: 20px;
-            border-bottom: none;
-            box-shadow: var(--box-shadow);
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin: 0;
             padding: 0;
         }
@@ -50,15 +48,14 @@
         }
 
         nav ul li a {
-            color: #FFF;
-            padding: 12px 18px;
+            color: white;
+            padding: 10px 15px;
             display: block;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: var(--primary-color);
+            background-color: #555;
         }
 
         nav ul li ul {
@@ -66,12 +63,10 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: rgba(210, 180, 140, 0.95);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+            background-color: #444;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            padding: 10px;
-            box-shadow: var(--box-shadow);
         }
 
         nav ul li:hover ul {
@@ -79,39 +74,36 @@
         }
 
         nav ul li ul li {
-            padding: 5px 0;
+            padding: 0;
         }
 
         nav ul li ul li a {
-            padding: 8px 15px;
+            padding: 10px 20px;
             white-space: nowrap;
         }
 
         nav ul li ul li a:hover {
-            color: var(--primary-color);
+            background-color: #666;
         }
+
 
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 60px;
-            background-color: #FFF;
-            position: relative; /* Para posicionar el dinosaurio */
+            gap: 20px;
+            padding: 0 60px;
         }
 
         .member {
-            margin: 20px;
             text-align: center;
             flex: 1 1 45%;
+            max-width: 45%;
             background-color: rgba(255, 255, 255, 0.8);
             padding: 30px;
-            border: none;
             border-radius: 8px;
             transition: transform 0.2s ease-in-out;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            position: relative;
-            top: -20px;
         }
 
         .member:hover {
@@ -119,84 +111,32 @@
         }
 
         img {
-            max-width: 120px;
-            height: 120px;
+            max-width: 240px;
+            height: 240px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
             border: 2px solid var(--primary-color);
         }
 
-        h1,
-        h2 {
-            text-align: center;
-            color: var(--primary-color);
-        }
-
         h1 {
-            margin-bottom: 30px;
-            padding: 15px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        h2 {
-            margin-bottom: 15px;
-        }
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    width: 90%; /* Ahora los títulos llegan más a los lados */
+    margin-left: auto;
+    margin-right: auto;
+}
 
         p {
             text-align: justify;
-            margin: 15px;
-            padding: 15px;
+            max-width: 80%;
+            margin: 0 auto 30px auto;
             color: var(--text-color);
         }
 
-        footer {
-            background-color: #000;
-            color: #FFF;
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            border-top: none;
-            box-shadow: var(--box-shadow);
-        }
-
-        .text-left {
-            text-align: left;
-        }
-
-        /* Estilos Retro */
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Dinosaurio */
-        .dinosaurio {
-            position: absolute;
-            bottom: 20px; /* Ajusta la posición vertical */
-            right: 20px; /* Ajusta la posición horizontal */
-            width: 100px; /* Ajusta el tamaño */
-            z-index: 1; /* Asegura que esté por encima de las cards */
-            animation: moverDinosaurio 10s linear infinite; /* Animación */
-        }
-
-        @keyframes moverDinosaurio {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); } /* Pequeño salto */
-            100% { transform: translateY(0); }
-        }
-
-        .dinosaurio img {
-            max-width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 
@@ -221,33 +161,38 @@
         </nav>
     </header>
 
-    <h1 class="text-left">About Us</h1>
+    <h1>About Us</h1>
+    <p>We are a leading online technology store, with more than 10 years of experience. We are experts in computers and electronics and sell hardware components for electronic devices.</p>
 
-    <p class="text-left">We are a leading online technology store, with more than 10 years of experience. We are
-        experts in computers and electronics and we sell hardware components for electronic devices.</p>
-
-    <h1 class="text-left">Our history</h1>
-
-    <p class="text-left">We started with a small local business that expanded to different areas of the country.
-        Today we have distribution locations all around the world (A Coruña, Barcelona, Tokyo, Brussels, Lima...). And
-        we also continue to expand, including, recently, new locations such as: Sydney, Alaska and Toronto.</p>
-
+    <h1>Our History</h1>
+    <p>We started as a small local business and expanded to different areas of the country. Today, we have distribution locations worldwide, including A Coruña, Barcelona, Tokyo, Brussels, Lima, Sydney, Alaska, and Toronto.</p>
+    <h1>Our Team</h1>
     <div class="container">
         <div class="member">
-            <img src="unnamed.png" alt="Nombre 1">
+            <img src="team/person1.png.webp" alt="Alexandre Barbeito Domínguez">
             <h2>Alexandre Barbeito Domínguez</h2>
-            <p>Backend Manager: Director of software development and mantenimiento para asegurar el correcto
-                funcionamiento del servidor.</p>
+            <p>Backend Manager: Responsible for software development and maintenance to ensure server functionality.</p>
         </div>
 
         <div class="member">
-            <img src="unnamed.png" alt="Nombre 2">
+            <img src="team/person2.png.jpg" alt="Martín Sánchez Novo">
             <h2>Martín Sánchez Novo</h2>
-            <p>Gaming Specialist: experto en ordenadores, periféricos y componentes de nueva generación para
-                maximizar el rendimiento de PC Gaming.</p>
+            <p>Gaming Specialist: Expert in computers, peripherals, and next-generation components for maximum gaming PC performance.</p>
         </div>
 
         <div class="member">
-            <img src="unnamed.png" alt="Nombre 3">
+            <img src="team/person3.png" alt="Nuria Calo Mosquera">
             <h2>Nuria Calo Mosquera</h2>
-            <p
+            <p>Frontend Manager: Developer responsible for the visual and functional aspects of web development.</p>
+        </div>
+
+        <div class="member">
+            <img src="team/person4.png" alt="Silvia García Bouza">
+            <h2>Silvia García Bouza</h2>
+            <p>Head of Computer and Mobile Devices: Oversees hardware and software purchases and sales for computers and mobile devices.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
