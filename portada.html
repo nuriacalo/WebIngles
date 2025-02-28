@@ -1,81 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jurassic Parts</title>
     <link rel="stylesheet" href="estilos_portada.css">
+    <link rel="icon" href="mechagodzilla.jpg" type="image/jpg"> <!-- Favicon -->
 </head>
-
 <body>
+    <!-- Pantalla de carga -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
     <header>
-        <nav>
-            <ul>
-                <li><a href="portada.html">Home</a></li>
-                <li>
-                    <a href="catalogo.html">Catalog</a>
-                    <ul>
-                        <li><a href="vintage">Vintage</a></li>
-                        <li><a href="refurbished">Refurbished</a></li>
-                        <li><a href="new">New</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="questions.html">FAQ</a></li>
-            </ul>
-        </nav>
+        <div class="logo-container">
+            <h1>Jurassic Parts</h1>
+        </div>
     </header>
+
+    <section class="banner">
+        <!-- Banner con imagen tecnológica -->
+    </section>
+
     <nav>
         <ul>
-            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="catalogo.html">Catalog</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="questions.html">FAQ</a></li>
         </ul>
     </nav>
+
     <main>
-        <section id="portada">
-            <h2>Bienvenidos a Jurassic Parts</h2>
-            <p>Especialistas en repuestos para vehículos todo terreno.</p>
-            <div class="image-container">
-                <img src="imagenes/jp_logo.png" alt="Tyrannosaurio cibernético">
-            </div>
-        </section>
-
-        <section id="sobre-nosotros">
-            <h2>Sobre Nosotros</h2>
-            <p>Jurassic Parts es una empresa especializada en repuestos para vehículos todo terreno y de aventura.</p>
-        </section>
-
-        <section id="productos">
-            <h2>Nuestros Productos</h2>
-            <p>Ofrecemos una amplia variedad de repuestos para diferentes modelos de vehículos.</p>
-            <ul>
-                <li>Neumáticos todo terreno</li>
-                <li>Amortiguadores reforzados</li>
-                <li>Parachoques de acero</li>
-                <li>Kits de elevación</li>
-            </ul>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Puedes contactarnos a través del siguiente formulario:</p>
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
+        <section class="hero">
+            <h2>High-Tech Components with a Prehistoric Touch</h2>
         </section>
     </main>
-</body>
 
+    <script>
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.display = 'none'; // Ocultamos la pantalla de carga cuando la página esté completamente cargada
+        });
+    </script>
+</body>
 </html>
