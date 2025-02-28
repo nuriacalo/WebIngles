@@ -29,16 +29,20 @@
         }
 
         header {
-            background-color: #333;
-            color: white;
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #000;
+            color: #FFF;
+            padding: 20px;
+            border-bottom: none;
+            box-shadow: var(--box-shadow);
+            height: 80px;
+            /* Ajusta este valor según tus necesidades */
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            justify-content: center;
+            gap: 2rem;
             margin: 0;
             padding: 0;
         }
@@ -48,14 +52,15 @@
         }
 
         nav ul li a {
-            color: white;
-            padding: 10px 15px;
+            color: #FFF;
+            padding: 12px 18px;
             display: block;
-            transition: background-color 0.3s ease;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: #555;
+            color: var(--primary-color);
         }
 
         nav ul li ul {
@@ -63,29 +68,41 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #444;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: rgba(210, 180, 140, 0.95);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
             z-index: 1000;
+            padding: 10px;
+            box-shadow: var(--box-shadow);
         }
+
+
+        nav ul li a {
+    color: #FFF;
+    padding: 12px 18px; /* Mantén estos valores iguales */
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
 
         nav ul li:hover ul {
             display: block;
         }
 
         nav ul li ul li {
-            padding: 0;
+            padding: 5px 0;
         }
 
         nav ul li ul li a {
-            padding: 10px 20px;
+            padding: 8px 15px;
             white-space: nowrap;
         }
 
         nav ul li ul li a:hover {
-            background-color: #666;
+            color: var(--primary-color);
         }
-
 
         .container {
             display: flex;
@@ -120,82 +137,144 @@
         }
 
         h1 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--border-color);
-    width: 90%; /* Ahora los títulos llegan más a los lados */
-    margin-left: auto;
-    margin-right: auto;
-}
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            width: 90%;
+            /* Ahora los títulos llegan más a los lados */
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bolder;
+            font-size: 2.7em;
+        }
+
+
+        h2 {
+            font-size: 1.8em;
+        }
 
         p {
             text-align: justify;
             max-width: 80%;
             margin: 0 auto 30px auto;
+            font-size: 1.3em;
             color: var(--text-color);
         }
 
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="portada.html">Home</a></li>
+            <li>
+                <a href="catalogo.html">Catalog</a>
+                <ul>
+                    <li><a href="vintage">Vintage</a></li>
+                    <li><a href="refurbished">Refurbished</a></li>
+                    <li><a href="new">New</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="questions.html">FAQ</a></li>
+        </ul>
+    </nav>
+</header>
 
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="portada.html">Home</a></li>
-                <li>
-                    <a href="catalogo.html">Catalog</a>
-                    <ul>
-                        <li><a href="vintage">Vintage</a></li>
-                        <li><a href="refurbished">Refurbished</a></li>
-                        <li><a href="new">New</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="questions.html">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+
 
     <h1>About Us</h1>
-    <p>Welcome to 'Jurasic Parts', your trusted online store for everything technology related. We've been here since 2012 and are passionate about making technology available to everyone. We sell a wide range of computer parts, gadgets and electronics, from the basics to the latest innovations.
+    <p>Welcome to 'Jurassic Parts', your trusted online store for everything technology related. We've been here since
+        2012 and are passionate about making technology available to everyone. We sell a wide range of computer parts,
+        gadgets and electronics, from the basics to the latest innovations.
     </p>
-    <p>At Jurassic Parts we believe in simplicity. Our website is easy to navigate and we offer clear and useful information on all our products. We offer competitive prices and fast, reliable shipping, so you can get your technology quickly and without spending a lot of money.</p>
-    <p>We are more than a store: we are a community of technology enthusiasts. Our customer service team is always ready to answer your questions, and whether you're a seasoned pro or just starting out, Jurassic Parts is here to help you explore the exciting world of technology.</p>
+    <p>At Jurassic Parts we believe in simplicity. Our website is easy to navigate and we offer clear and useful
+        information on all our products. We offer competitive prices and fast, reliable shipping, so you can get your
+        technology quickly and without spending a lot of money.</p>
+    <p>We are more than a store: we are a community of technology enthusiasts. Our customer service team is always ready
+        to answer your questions, and whether you're a seasoned pro or just starting out, Jurassic Parts is here to help
+        you explore the exciting world of technology.</p>
     <h1>Our History</h1>
-    <p>Our company started as a small neighborhood store. We focused on serving our local customers and building strong relationships within our community. Over time, we grew. We started reaching out to nearby towns and then larger cities. Later we saw the need for our products and services in more places, so we decided to expand.</p>
-    <p>Today we are proud to say that we have distribution centers all over the world. We have come a long way from our small store. You can find us in many different places. We are in A Coruña, Spain, and also in Barcelona. We have locations in Tokyo, Japan, and Brussels, Belgium. We also have distribution in Lima, Peru, and Sydney, Australia. We even have offices in Alaska (USA) and Toronto (Canada). We have worked hard to bring our products and services to people all over the world. We want to make sure that everyone has access to what we have to offer, wherever they live.</p>
+    <p>Our company started as a small neighborhood store. We focused on serving our local customers and building strong
+        relationships within our community. Over time, we grew. We started reaching out to nearby towns and then larger
+        cities. Later we saw the need for our products and services in more places, so we decided to expand.</p>
+    <p>Today we are proud to say that we have distribution centers all over the world. We have come a long way from our
+        small store. You can find us in many different places. We are in A Coruña, Spain, and also in Barcelona. We have
+        locations in Tokyo, Japan, and Brussels, Belgium. We also have distribution in Lima, Peru, and Sydney,
+        Australia. We even have offices in Alaska (USA) and Toronto (Canada). We have worked hard to bring our products
+        and services to people all over the world. We want to make sure that everyone has access to what we have to
+        offer, wherever they live.</p>
     <h1>Our Team</h1>
     <div class="container">
         <div class="member">
             <img src="team/person1.png.webp" alt="Alexandre Barbeito Domínguez">
-            <h2>Alexandre Barbeito Domínguez</h2>
-            <p>Backend Manager: Responsible for software development and maintenance to ensure server functionality.</p>
+            <h2>Alexandre Barbeito Domínguez - Backend Manager</h2>
+            <p>Alexandre Barbeito Domínguez is our Backend Manager, the architect of our server-side functionality. He
+                ensures our web applications run efficiently and securely. Specializing in software development and
+                maintenance, he optimizes performance and stability. His expertise in database management and APIs is
+                fundamental to our platforms' data flow and functionality. Alexandre's work provides the robust
+                foundation our services rely on.</p>
         </div>
 
         <div class="member">
             <img src="team/person2.png.jpg" alt="Martín Sánchez Novo">
-            <h2>Martín Sánchez Novo</h2>
-            <p>Gaming Specialist: Expert in computers, peripherals, and next-generation components for maximum gaming PC performance.</p>
+            <h2>Martín Sánchez Novo - Gaming Specialist</h2>
+            <p>Martín Sánchez Novo is our Gaming Specialist, the expert in high-performance gaming hardware. His passion
+                for gaming translates into optimized systems and cutting-edge peripherals. With deep knowledge of the
+                most advanced components, he guides our customers to achieve the ultimate gaming experience. His
+                dedication ensures every configuration reaches peak performance. Martín stays up-to-date on the latest
+                gaming technology.</p>
         </div>
 
         <div class="member">
             <img src="team/person3.png" alt="Nuria Calo Mosquera">
-            <h2>Nuria Calo Mosquera</h2>
-            <p>Frontend Manager: Developer responsible for the visual and functional aspects of web development.</p>
+            <h2>Nuria Calo Mosquera - Frontend Manager</h2>
+            <p>Nuria Calo Mosquera is our Frontend Manager, the creator of engaging and functional web interfaces. Her
+                ability to transform designs into seamless user experiences is essential. With mastery of modern
+                frontend technologies, she ensures our websites are accessible and efficient. Her commitment to quality
+                is reflected in every detail of the interface. Nuria focuses on user-centered design, making sure the
+                websites are easy to use.</p>
         </div>
 
         <div class="member">
             <img src="team/person4.png" alt="Silvia García Bouza">
-            <h2>Silvia García Bouza</h2>
-            <p>Head of Computer and Mobile Devices: Oversees hardware and software purchases and sales for computers and mobile devices.</p>
+            <h2>Silvia García Bouza - Head of Computer and Mobile Devices</h2>
+            <p>Silvia García Bouza leads our Computer and Mobile Devices division, managing the procurement and sales of
+                hardware and software. Her market knowledge allows her to offer high-quality products at competitive
+                prices. She focuses on meeting our customers' needs, providing personalized solutions and expert advice.
+                Her leadership ensures efficient inventory management and customer satisfaction. Silvia is dedicated to
+                providing the best tech solutions for customers..</p>
         </div>
     </div>
+    <p>
 
+    </p>
+    <p>
+
+    </p>
+    <p></p>
 </body>
+<footer>
+    <p style="text-align: center;"><a style="color: #FFF;"><b>&copy; 2025 Jurassic Parts Shop. All rights
+                reserved.</b></a></p>
+</footer>
 
 </html>
