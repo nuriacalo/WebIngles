@@ -40,38 +40,46 @@ const products = [
     { id: 39, name: "Tempest Liquid Cooler 360RGB", price: 110, category: "new", type: "computers", brand: "tempest", image: "productos/tempest-liquid-cooler.jpg" }
 ];
 
-// Carrito de compras
-let cart = [];
-let cartCount = 0;
-let cartTotal = 0;
+// Variables globales
+let cart = []; // Carrito de compras
+let cartCount = 0; // Número de productos en el carrito
+let cartTotal = 0; // Total del carrito
 
-// Función para renderizar productos
-function renderProducts(filteredProducts) {
-    const productsContainer = document.querySelector('.catalog-container');
-    productsContainer.innerHTML = '';
+// Seleccionar elementos del DOM
+const priceRange = document.getElementById('price-range');
+const minPriceElement = document.getElementById('min-price');
+const maxPriceElement = document.getElementById('max-price');
+const selectedPriceElement = document.getElementById('selected-price');
+
+// Función para actualizar el valor seleccionado
+function updateSelectedPrice() {
+    const selectedPrice = priceRange.value; // Precio seleccionado
+    selectedPriceElement.textContent = `Selected Price: €${selectedPrice}`; // Actualizar el texto
+}
+
+// Evento para actualizar el valor seleccionado en tiempo real
+priceRange.addEventListener('input', updateSelectedPrice);
+
+// Renderizar productos
+function renderProducts(filteredProducts = products) {
+    const catalogContainer = document.querySelector('.catalog-container');
+    catalogContainer.innerHTML = ''; // Limpiar contenedor
 
     filteredProducts.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.classList.add('product-card');
-        productElement.innerHTML = `
+        const productPrice = isNaN(product.price) ? product.price : product.price.toFixed(2) + "€";
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        productCard.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
-            <p>Price: ${product.price ? product.price : 'Contact us for pricing'}€</p>
-            <button>Add to Cart</button>
+            <p>Price: ${productPrice}</p>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
         `;
-
-        // *** AQUI VA EL CODIGO ***
-        const addToCartButton = productElement.querySelector('button');
-        addToCartButton.addEventListener('click', () => {
-            addToCart(product.id);
-        });
-        // *** FIN DEL CODIGO ***
-
-        productsContainer.appendChild(productElement);
+        catalogContainer.appendChild(productCard);
     });
 }
 
-// Función para agregar productos al carrito
+// Agregar producto al carrito
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (product) {
@@ -87,44 +95,17 @@ function addToCart(productId) {
     }
 }
 
-//Carrito
-document.addEventListener('DOMContentLoaded', function () {
-    const cartIcon = document.getElementById('cart-icon');
-    const cartDropdown = document.getElementById('cart-dropdown');
-    const closeCart = document.getElementById('close-cart');
-
-    // Abrir el carrito al hacer clic en el ícono
-    cartIcon.addEventListener('click', function (e) {
-        e.stopPropagation(); // Añade esta línea
-        cartDropdown.classList.toggle('active');
-    });
-
-    // Cerrar el carrito al hacer clic en el botón de cerrar
-    document.addEventListener('click', function (e) {
-        if (!cartDropdown.contains(e.target) && !cartIcon.contains(e.target)) {
-            cartDropdown.classList.remove('active');
-        }
-    });
-
-    // Cerrar el carrito al hacer clic fuera de él
-    document.addEventListener('click', function (e) {
-        if (!cartDropdown.contains(e.target) && !cartIcon.contains(e.target)) {
-            cartDropdown.classList.remove('active');
-        }
-    });
-});
-
-// Función para actualizar el carrito
+// Actualizar el carrito
 function updateCart() {
     const cartItems = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
     const cartCountElement = document.querySelector('.cart-count');
 
-    cartItems.innerHTML = '';
+    cartItems.innerHTML = ''; // Limpiar items del carrito
+
     cart.forEach((item, index) => {
         const li = document.createElement('li');
         li.classList.add('cart-item');
-
         const productPrice = isNaN(item.product.price) ? item.product.price : item.product.price.toFixed(2) + "€";
         li.innerHTML = `
             <img src="${item.product.image}" alt="${item.product.name}" class="cart-item-image">
@@ -148,7 +129,7 @@ function updateCart() {
     cartCountElement.textContent = cartCount;
 }
 
-// Función para aumentar la cantidad de un producto
+// Aumentar cantidad de un producto
 function increaseQuantity(index) {
     cart[index].quantity++;
     cartCount++;
@@ -156,49 +137,7 @@ function increaseQuantity(index) {
     updateCart();
 }
 
-// Función para disminuir la cantidad de un producto
-function decreaseQuantity(index) {
-    if (cart[index].quantity > 1) {
-        cart[index].quantity--;
-        cartCount--;
-        cartTotal -= cart[index].product.price || 0;
-    } else {
-        removeFromCart(index); // Elimina el producto si la cantidad es 0
-    }
-    updateCart();
-}
-
-// Función para eliminar un producto del carrito
-function removeFromCart(index) {
-    cartCount -= cart[index].quantity;
-    cartTotal -= cart[index].product.price * cart[index].quantity || 0;
-    cart.splice(index, 1);
-    updateCart();
-}
-
-// Función para manejar el botón de "Comprar"
-document.getElementById('checkout-button').addEventListener('click', function () {
-    if (cart.length === 0) {
-        alert("Tu carrito está vacío. ¡Añade algunos productos antes de comprar!");
-    } else {
-        alert("¡Gracias por tu compra! Total: " + cartTotal.toFixed(2) + "€");
-        // Vaciar el carrito después de la compra
-        cart = [];
-        cartCount = 0;
-        cartTotal = 0;
-        updateCart();
-    }
-});
-
-
-
-function increaseQuantity(index) {
-    cart[index].quantity++;
-    cartCount++;
-    cartTotal += cart[index].product.price || 0;
-    updateCart();
-}
-
+// Disminuir cantidad de un producto
 function decreaseQuantity(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity--;
@@ -210,6 +149,7 @@ function decreaseQuantity(index) {
     updateCart();
 }
 
+// Eliminar producto del carrito
 function removeFromCart(index) {
     cartCount -= cart[index].quantity;
     cartTotal -= cart[index].product.price * cart[index].quantity || 0;
@@ -217,52 +157,59 @@ function removeFromCart(index) {
     updateCart();
 }
 
-// Renderizar productos dinámicamente
-function renderProducts() {
-    const catalogContainer = document.querySelector('.catalog-container');
-    catalogContainer.innerHTML = '';
+// Función para manejar el botón de comprar
+document.getElementById('checkout-button').addEventListener('click', function () {
+    if (cart.length === 0) {
+        alert("Tu carrito está vacío. ¡Añade algunos productos antes de comprar!");
+    } else {
+        alert(`¡Gracias por tu compra! Total: ${cartTotal.toFixed(2)}€`);
+        // Vaciar el carrito después de la compra
+        cart = [];
+        cartCount = 0;
+        cartTotal = 0;
+        updateCart(); // Actualizar la visualización del carrito
+    }
+});
 
-    products.forEach(product => {
-        const productPrice = isNaN(product.price) ? product.price : product.price.toFixed(2) + "€";
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-        productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>Price: ${productPrice}</p>
-            <button onclick="addToCart(${product.id})">Add to Cart</button>
-        `;
-        catalogContainer.appendChild(productCard);
-    });
-}
-
-// Función para aplicar filtros
+// Aplicar filtros por precio
 document.querySelector('.apply-filters').addEventListener('click', function () {
-    const selectedFilters = [];
-    // Obtener los filtros seleccionados
-    document.querySelectorAll('.filters input[type="checkbox"]:checked').forEach(checkbox => {
-        selectedFilters.push(checkbox.value);
-    });
-    console.log("Filtros aplicados:", selectedFilters);
-    // Aquí puedes añadir la lógica para filtrar los productos
-    alert("Filtros aplicados: " + selectedFilters.join(", "));
+    const maxPrice = parseFloat(priceRange.value);
+    const filteredProducts = products.filter(product => product.price <= maxPrice);
+    renderProducts(filteredProducts); // Renderizar solo los productos filtrados
 });
 
-// Función para limpiar filtros
+// Limpiar filtros
 document.querySelector('.clear-filters').addEventListener('click', function () {
-    // Desmarcar todos los checkboxes
-    document.querySelectorAll('.filters input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
-    console.log("Filtros limpiados");
-    // Aquí puedes añadir la lógica para mostrar todos los productos
-    alert("Filtros limpiados");
+    priceRange.value = 500; // Restablecer el valor del rango
+    updateSelectedPrice(); // Actualizar el texto del rango
+    renderProducts(); // Mostrar todos los productos
 });
 
-// Llamar a la función para renderizar productos al cargar la página
-renderProducts();
-
-/* Llamar a la función para renderizar productos al cargar la página
+// Abrir y cerrar el carrito
 document.addEventListener('DOMContentLoaded', function () {
-    renderProducts(); // Llama a la función para renderizar los productos
-});*/
+    const cartIcon = document.getElementById('cart-icon');
+    const cartDropdown = document.getElementById('cart-dropdown');
+    const closeCart = document.getElementById('close-cart');
+
+    // Abrir el carrito al hacer clic en el ícono
+    cartIcon.addEventListener('click', function (e) {
+        e.stopPropagation(); // Evitar que el clic se propague
+        cartDropdown.classList.toggle('active');
+    });
+
+    // Cerrar el carrito al hacer clic en el botón de cerrar
+    closeCart.addEventListener('click', function () {
+        cartDropdown.classList.remove('active');
+    });
+
+    // Cerrar el carrito al hacer clic fuera de él
+    document.addEventListener('click', function (e) {
+        if (!cartDropdown.contains(e.target) && !cartIcon.contains(e.target)) {
+            cartDropdown.classList.remove('active');
+        }
+    });
+
+    // Inicialización
+    updateSelectedPrice(); // Mostrar el rango de precios inicial
+    renderProducts(); // Renderizar todos los productos al cargar la página
+});
