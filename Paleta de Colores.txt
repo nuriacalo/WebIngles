@@ -1,0 +1,36 @@
+﻿PALETA DE COLORES
+Son so exemplos, podense cambiar ou mezclar. 
+
+Opción 1
+
+:root {
+   --brown-dark: #482e18;    /* Marrón oscuro más intenso (tierra, troncos) */
+    --brown-light: #ac9992;   /* Marrón claro (tono suave) */
+    --green-dino: #3A5A2F;    /* Verde dinosaurio más oscuro (hojas, naturaleza) */
+    --green-tech: #628837;    /* Verde tecnológico (pantallas, retro) */
+    --cream: #F9F5F0;         /* Fondo más claro y suave */
+    --off-white: #fff4e5;     /* Crema  */
+}
+Sugerencias de uso:
+Usa --brown-dark y --green-dino para elementos destacados (botones, títulos).
+Combina --brown-light y --cream para fondos y secciones suaves.
+Añade --green-tech y --off-white para detalles modernos y tecnológicos.
+
+Opcion 2
+
+
+:root {
+  --brown-earth: #7E5E4D;    /* Marrón tierra (robusto y natural) */
+  --brown-sand: #B8A18A;     /* Marrón arena (suave y cálido) */
+  --green-jungle: #3D5A3F;   /* Verde jungla (profundo y natural) */
+  --green-lime: #A5D6A7;     /* Verde lima (moderno y tecnológico) */
+  --cream-soft: #F0EAD6;     /* Crema suave (neutro y acogedor) */
+  --white-smoke: #F5F5F5;    /* Blanco humo (brillante y limpio) */
+}
+Sugerencias de uso:
+Usa --brown-earth y --green-jungle para elementos destacados como botones o títulos.
+Combina --brown-sand y --cream-soft para fondos y secciones suaves.
+Añade --green-lime y --white-smoke para detalles modernos y tecnológicos.
+
+
+
