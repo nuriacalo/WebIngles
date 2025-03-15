@@ -5,26 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Company</title>
+    <link rel="stylesheet" href="about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Press+Start+2P&display=swap"
         rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #8B4513;
-            --secondary-color: #D2B48C;
-            --background-color: #FFF;
-            --text-color: #333;
-            --border-color: #A0522D;
-            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      :root {
+    --brown-dark: #482e18;    /* Marrón oscuro más intenso (tierra, troncos) */
+    --brown-light: #ac9992;   /* Marrón claro (tono suave) */
+    --green-dino: #3A5A2F;    /* Verde dinosaurio más oscuro (hojas, naturaleza) */
+    --green-tech: #628837;    /* Verde tecnológico (pantallas, retro) */
+    --cream: #F9F5F0;         /* Fondo más claro y suave */
+    --off-white: #fff4e5;     /* Blanco roto (brillo tecnológico) */
+}
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--background-color);
+            background-color: var(--cream); /* Fondo más claro y suave */
             overflow-x: hidden;
         }
 
@@ -113,20 +114,32 @@
         }
 
         .member {
-            text-align: center;
-            flex: 1 1 45%;
-            max-width: 45%;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 8px;
-            transition: transform 0.2s ease-in-out;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+    text-align: center;
+    flex: 1 1 20%;
+    max-width: 30%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: var(--off-white);
+    border: 1px solid var(--brown-light);
+    margin: 0;
+}
 
         .member:hover {
             transform: translateY(-5px);
         }
-
+        h2 {
+            font-size: 1.8em;
+        }
+        .member h2 {
+    color: #482e18; /* Texto en marrón oscuro más intenso */
+    width: 80%; /* Ajusta el valor según necesites */
+    margin: 0 auto; /* Centra horizontalmente el h2 */
+    text-align: center; /* Centra el texto dentro del h2 */
+    padding: 20px; /* Añade espacio alrededor del texto */
+}
         img {
             max-width: 240px;
             height: 240px;
@@ -138,7 +151,7 @@
 
         h1 {
             text-align: center;
-            color: var(--primary-color);
+            color: #3A5A2F;
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 2px solid var(--border-color);
@@ -151,9 +164,7 @@
         }
 
 
-        h2 {
-            font-size: 1.8em;
-        }
+        
 
         p {
             text-align: justify;
@@ -225,7 +236,7 @@
     <h1>Our Team</h1>
     <div class="container">
         <div class="member">
-            <img src="team/person1.png.webp" alt="Alexandre Barbeito Domínguez">
+            <img src="team/Alex.jpg" alt="Alexandre Barbeito Domínguez">
             <h2>Alexandre Barbeito Domínguez - Backend Manager</h2>
             <p>Alexandre Barbeito Domínguez is our Backend Manager, the architect of our server-side functionality. He
                 ensures our web applications run efficiently and securely. Specializing in software development and
@@ -235,7 +246,7 @@
         </div>
 
         <div class="member">
-            <img src="team/person2.png.jpg" alt="Martín Sánchez Novo">
+            <img src="team/Martín.jpg" alt="Martín Sánchez Novo">
             <h2>Martín Sánchez Novo - Gaming Specialist</h2>
             <p>Martín Sánchez Novo is our Gaming Specialist, the expert in high-performance gaming hardware. His passion
                 for gaming translates into optimized systems and cutting-edge peripherals. With deep knowledge of the
@@ -245,7 +256,7 @@
         </div>
 
         <div class="member">
-            <img src="team/person3.png" alt="Nuria Calo Mosquera">
+            <img src="team/Nuria.jpg" alt="Nuria Calo Mosquera">
             <h2>Nuria Calo Mosquera - Frontend Manager</h2>
             <p>Nuria Calo Mosquera is our Frontend Manager, the creator of engaging and functional web interfaces. Her
                 ability to transform designs into seamless user experiences is essential. With mastery of modern
@@ -255,7 +266,7 @@
         </div>
 
         <div class="member">
-            <img src="team/person4.png" alt="Silvia García Bouza">
+            <img src="team/Silvia.jpg" alt="Silvia García Bouza">
             <h2>Silvia García Bouza - Head of Computer and Mobile Devices</h2>
             <p>Silvia García Bouza leads our Computer and Mobile Devices division, managing the procurement and sales of
                 hardware and software. Her market knowledge allows her to offer high-quality products at competitive

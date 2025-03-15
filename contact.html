@@ -10,21 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Press+Start+2P&display=swap"
         rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #8B4513;
-            --secondary-color: #D2B48C;
-            --background-color: #FFF;
-            --text-color: #333;
-            --border-color: #A0522D;
-            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+            :root {
+    --brown-dark: #482e18;    /* Marrón oscuro más intenso (tierra, troncos) */
+    --brown-light: #ac9992;   /* Marrón claro (tono suave) */
+    --green-dino: #3A5A2F;    /* Verde dinosaurio más oscuro (hojas, naturaleza) */
+    --green-tech: #628837;    /* Verde tecnológico (pantallas, retro) */
+    --cream: #F9F5F0;         /* Fondo más claro y suave */
+    --off-white: #fff4e5;     /* Blanco roto (brillo tecnológico) */
+}
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--background-color);
+            background-color: #F9F5F0;
            
           
         }
@@ -115,11 +115,13 @@
             flex: 1;
             position: relative;
             top: -20px;
+            background-color: var(--off-white);
+            border: 1px solid var(--brown-light);
         }
 
         h1 {
             text-align: center;
-            color: var(--primary-color);
+            color: #482e18; 
             margin-bottom: 30px;
         }
 
@@ -129,7 +131,7 @@
 
         .contact-info h2 {
             margin-bottom: 15px;
-            color: var(--primary-color);
+            color:  #3A5A2F;
         }
 
         .contact-info p {
