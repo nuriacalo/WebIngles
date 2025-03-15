@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TechNova - Home</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS principal -->
+    <link rel="icon" href="tech-icon.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <style>
+        /* ==================== */
+        /* VARIABLES DE COLOR */
+        /* ==================== */
+        :root {
+            --brown-dark: #482e18;
+            /* Marrón oscuro más intenso (tierra, troncos) */
+            --brown-light: #ac9992;
+            /* Marrón claro (tono suave) */
+            --green-dino: #3A5A2F;
+            /* Verde dinosaurio más oscuro (hojas, naturaleza) */
+            --green-tech: #628837;
+            /* Verde tecnológico (pantallas, retro) */
+            --cream: #F9F5F0;
+            /* Fondo más claro y suave */
+            --off-white: #fff4e5;
+            /* Blanco roto (brillo tecnológico) */
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            color: var(--brown-dark);
+        }
+
+        header {
+            background-color: var(--brown-dark);
+            color: var(--off-white);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background-color: var(--green-dino);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .hero {
+            background-color: var(--green-tech);
+            color: var(--off-white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Carrusel de promociones */
+        .promotions {
+            margin-top: 2rem;
+            padding: 2rem 0;
+            background-color: var(--off-white);
+            text-align: center;
+        }
+
+        .promotions h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--brown-dark);
+        }
+
+        .promotions-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .promo-slide img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Flechas de navegación del carrusel */
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            color: var(--brown-dark);
+            cursor: pointer;
+            z-index: 1;
+            transition: background-color 0.3s ease;
+        }
+
+        .slick-prev:hover,
+        .slick-next:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .slick-prev {
+            left: 10px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        /* Sección de marcas */
+        .brands-section {
+            margin-top: 4rem;
+            padding: 3rem 1.5rem;
+            background-color: var(--off-white);
+            text-align: center;
+            border-top: 2px solid var(--green-tech);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .brands-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--brown-dark);
+        }
+
+        .brands-section p {
+            font-size: 1.2rem;
+            color: var(--brown-dark);
+            margin-bottom: 2rem;
+        }
+
+        .brands-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 columnas para las marcas */
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .brands-container .brand-item {
+            background-color: white;
+            /* Fondo blanco para las imágenes */
+            padding: 1.5rem;
+            /* Espaciado interno */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brands-container img {
+            width: 100%;
+            height: 180px;
+            /* Altura más grande para las imágenes */
+            object-fit: contain;
+            /* Asegura que la imagen se ajuste sin distorsión */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .brands-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .brands-container {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columnas en móviles */
+            }
+
+            .brands-container img {
+                height: 150px;
+                /* Altura ajustada para móviles */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pantalla de carga -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <h1>TechNova</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero">
+            <h2>Cutting-Edge Technology at Your Fingertips</h2>
+        </section>
+
+        <!-- Carrusel de promociones -->
+        <section class="promotions">
+            <h2>Latest Promotions</h2>
+            <div class="promotions-carousel">
+                <div class="promo-slide"><img src="promociones/A.webp" alt="Promo 1"></div>
+                <div class="promo-slide"><img src="promociones/B.webp" alt="Promo 2"></div>
+                <div class="promo-slide"><img src="promociones/C.webp" alt="Promo 3"></div>
+            </div>
+        </section>
+
+        <!-- Sección de marcas -->
+        <div class="brands-section">
+            <h2>Our Trusted Brands</h2>
+            <p>We collaborate with the best in the industry to bring you top-quality products.</p>
+
+            <!-- Contenedor de marcas -->
+            <div class="brands-container">
+                <div class="brand-item">
+                    <img src="marcas/acer1.jpg" alt="Acer">
+                </div>
+                <div class="brand-item">
+                    <img src="marcas/amd.jpg" alt="AMD">
+                </div>
+                <div class="brand-item">
+                    <img src="marcas/apple.webp" alt="Apple">
+                </div>
+                <div class="brand-item">
+                    <img src="marcas/asus.jpg" alt="ASUS">
+                </div>
+                <div class="brand-item">
+                    <img src="marcas/intel.png" alt="Intel">
+                </div>
+                <div class="brand-item">
+                    <img src="marcas/nvidia.jpg" alt="NVIDIA">
+                </div>
+                <div class="brand-item">
+                    <img src="marcas/samsung.jpg" alt="Samsung">
+                </div>
+                <div class="brand-item">
+                    <img src="marcas/dell.jpg" alt="Dell">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            document.getElementById('loading-screen').style.display = 'none';
+        });
+
+        $(document).ready(function () {
+            $('.promotions-carousel').slick({
+                dots: false, /* Elimina los puntos de navegación */
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: '<button type="button" class="slick-prev">&#10094;</button>', /* Flecha izquierda */
+                nextArrow: '<button type="button" class="slick-next">&#10095;</button>', /* Flecha derecha */
+            });
+        });
+    </script>
+</body>
+
+</html>
