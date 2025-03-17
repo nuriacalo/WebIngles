@@ -1,0 +1,427 @@
+@font-face {
+    font-family: 'JurassicPark';
+    src: url('Jurassic_Park.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --brown-dark: #482e18;
+    --brown-light: #ac9992;
+    --green-dino: #3A5A2F;
+    --green-tech: #628837;
+    --cream: #F9F5F0;
+    --off-white: #fff4e5;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
+    color: var(--brown-dark);
+    position: relative;
+}
+
+/* Pantalla de carga */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--green-tech);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Contenedor común para header y nav */
+.header-nav-container {
+    background: linear-gradient(to bottom,
+            var(--brown-dark) 50%,
+            var(--green-dino) 100%);
+}
+
+header {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header h1 {
+    font-family: 'JurassicPark', Arial, sans-serif; /* Fuente aplicada */
+    color: #628837;
+    text-shadow: 2px 2px 0 #F9F5F0, 4px 4px 0 #000000;
+    font-size: 8rem; /* Tamaño de fuente más grande */
+    letter-spacing: 8px; /* Espaciado entre letras */
+    margin: 0;
+}
+
+
+/* Estilos para la barra de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 20px 0;
+    /* Aumentamos el padding vertical */
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+    /* Añadimos posición relativa al li */
+}
+
+nav ul li a {
+    color: var(--off-white);
+    padding: 20px 25px;
+    /* Aumentamos el padding */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+    /* Aumentamos el tamaño de la fuente */
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: var(--green-dino);
+    color: var(--off-white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Submenú de "Catalog" */
+nav ul li ul {
+    display: none;
+    /* Oculta el submenú por defecto */
+    position: absolute;
+    top: 100%;
+    /* Coloca el submenú debajo del enlace "Catalog" */
+    left: 0;
+    /* Alinea el submenú con el borde izquierdo del li */
+    background-color: var(--brown-dark);
+    /* Fondo del submenú */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+    z-index: 1000;
+    /* Asegura que el submenú esté por encima de otros elementos */
+    min-width: 200px;
+    /* Ancho mínimo del submenú */
+    padding: 10px 0;
+    /* Espaciado interno */
+    margin-top: 15px;
+    /* Aumentamos el margen superior para evitar superposición */
+}
+
+nav ul li ul li a {
+    padding: 10px 20px;
+    /* Espaciado interno de los elementos del submenú */
+    font-size: 18px;
+    /* Tamaño de fuente aumentado para el submenú */
+    white-space: nowrap;
+    /* Evita que el texto se divida en varias líneas */
+    display: block;
+    /* Hace que los enlaces ocupen todo el ancho del submenú */
+}
+
+nav ul li:hover ul {
+    display: block;
+    /* Muestra el submenú al hacer hover en "Catalog" */
+}
+
+nav ul li ul li {
+    padding: 0;
+    /* Elimina el padding por defecto */
+}
+
+nav ul li ul li a:hover {
+    background-color: var(--green-dino);
+    /* Color de fondo al hacer hover */
+    color: var(--off-white);
+    /* Color del texto al hacer hover */
+    transform: translateY(0);
+    /* Elimina la transformación en hover */
+    box-shadow: none;
+    /* Elimina la sombra en hover */
+}
+
+/* Contenedor de la imagen */
+.menu-image-container {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    /* Necesario para posicionar el botón */
+}
+
+/* Imagen dentro del contenedor */
+.menu-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Botón de mute */
+.audio-controls {
+    text-align: right;
+    /* Centra el botón horizontalmente */
+    margin: 1rem 3rem;
+    /* Espaciado entre el nav y la imagen */
+}
+
+/* Estilo para el botón de sonido */
+.sound-button {
+    background-color: #4CAF50;
+    /* Verde atractivo */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: inline-flex;
+    /* Para centrar el contenido */
+    align-items: right;
+    justify-content: right;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sound-button:hover {
+    background-color: #45a049;
+    /* Color verde más oscuro al pasar el mouse */
+    transform: scale(1.05);
+    /* Efecto de escala */
+}
+
+.sound-button i {
+    font-size: 20px;
+    /* Tamaño del icono */
+}
+
+.sound-button .button-text {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Estilo para el botón de sonido silenciado */
+.sound-button.muted {
+    background-color: #f44336;
+    /* Rojo para el estado de silencio */
+}
+
+.sound-button.muted:hover {
+    background-color: #d32f2f;
+    /* Rojo más oscuro */
+}
+
+/* Sección Hero */
+.hero {
+    background-color: var(--green-tech);
+    color: var(--off-white);
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 1.75rem;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+/* Carrusel de promociones */
+.promotions {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.promotions h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--brown-dark);
+}
+
+.promotions-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.promo-slide {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.promo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Flechas de navegación del carrusel */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: var(--brown-dark);
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.gif-container {
+    display: flex; /* Centra el contenido */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* O el ancho que prefieras */
+    height: auto; /* Ajusta según sea necesario */
+}
+
+.gif-portada {
+    max-width: 100%; /* Para que no se salga del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Si quieres bordes redondeados */
+}
+
+/* Sección de marcas */
+.brands-section {
+    margin-top: 4rem;
+    padding: 3rem 1.5rem;
+    background-color: var(--off-white);
+    text-align: center;
+    border-top: 2px solid var(--green-tech);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brands-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--brown-dark);
+}
+
+.brands-section p {
+    font-size: 1.2rem;
+    color: var(--brown-dark);
+    margin-bottom: 2rem;
+}
+
+.brands-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.brands-container .brand-item {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brands-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brands-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .brands-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brands-container img {
+        height: 150px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--brown-dark);
+    color: var(--off-white);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jurassic Parts</title>
-    <link rel="stylesheet" href="estilos_portada_v2.css"> <!-- Enlaza tu archivo CSS principal -->
+    <link rel="stylesheet" href="index.css"> <!-- Enlaza tu archivo CSS principal -->
     <link rel="icon" href="tech-icon.png" type="image/png"> <!-- Favicon -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,44 +19,51 @@
         <div class="spinner"></div>
     </div>
 
-    <header>
-        <div class="logo-container">
-            <h1>Jurassic Parts</h1>
-        </div>
-    </header>
+    <div class="header-nav-container">
+        <header>
+            <div class="logo-container">
+                <h1>Jurassic Parts</h1>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="catalogo.html">Catalog</a>
+                    <ul>
+                        <li><a href="vintage.html">Vintage</a></li>
+                        <li><a href="refurbished.html">Refurbished</a></li>
+                        <li><a href="new.html">New</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="questions.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="catalogo.html">Catalog</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="questions.html">FAQ</a></li>
-        </ul>
-    </nav>
+    <!-- Botón de mute -->
+    <div class="audio-controls">
+        <button id="muteButton" class="sound-button muted">
+            <i class="fas fa-volume-mute"></i> <!-- Icono inicial de mute -->
+            <span class="button-text">Unmute</span>
+        </button>
+    </div>
 
+    <!-- Contenedor de la imagen -->
+    <div class="menu-image-container">
+        <img src="dino_ruled_earth_recorted.jpg" alt="When Dinosaurs Ruled the Earth" class="menu-image">
+    </div>
 
-  <!-- Contenedor de la imagen debajo del menú -->
-<div class="menu-image-container">
-    <img src="dino_ruled_earth_recorted.jpg" alt="Descripción de la imagen" class="menu-image">
-</div>
-
-<audio id="audioPortada" autoplay loop>
-    <source src="jurassic_park_theme_song.mp3" type="audio/mpeg">
-    Tu navegador no soporta el audio.
-</audio>
-
-<div class="audio-controls">
-    <button id="muteButton" class="sound-button muted">
-        <i class="fas fa-volume-mute"></i> <!-- Icono inicial de mute -->
-        <span class="button-text">Unmute</span>
-    </button>
-</div>
-
+    <audio id="audioPortada" autoplay loop muted>
+        <source src="jurassic_park_theme_song.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+    </audio>
 
     <main>
-
-          <!-- Sección Hero -->
-          <section class="hero">
+        <!-- Sección Hero -->
+        <section class="hero">
             <h2>High-Tech Components with a Prehistoric Touch</h2>
         </section>
 
@@ -64,7 +72,7 @@
             <h2>Latest Promotions</h2>
             <div class="promotions-carousel">
                 <div class="promo-slide"><img src="promociones/A.webp" alt="Promo 1"></div>
-                <div class="promo-slide"><img src="promociones/D.jpeg" alt="Promo 2"></div>
+                <div class="promo-slide"><img src="promociones/promo.jpeg" alt="Promo 2"></div>
                 <div class="promo-slide"><img src="promociones/20.png" alt="Promo 3"></div>
             </div>
         </section>
@@ -72,7 +80,7 @@
         <div class="gif-container">
             <img src="jurassic_gif.gif" alt="Animación de Jurassic Parts" class="gif-portada">
         </div>
-      
+
 
         <!-- Sección de marcas -->
         <div class="brands-section">
@@ -108,27 +116,28 @@
             </div>
         </div>
     </main>
+
     <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    const audio = document.getElementById("audioPortada");
-    const muteButton = document.getElementById("muteButton");
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById("audioPortada");
+            const muteButton = document.getElementById("muteButton");
 
-    // Asegurar que el audio comienza silenciado
-    audio.muted = true;
-
-    // Controlar mute/unmute
-    muteButton.addEventListener("click", function () {
-        if (audio.muted) {
-            audio.muted = false;
-            muteButton.classList.remove("muted"); // Elimina la clase "muted"
-            muteButton.innerHTML = '<i class="fas fa-volume-up"></i><span class="button-text">Mute</span>'; // Cambiar icono y texto
-        } else {
+            // Asegurar que el audio comienza silenciado
             audio.muted = true;
-            muteButton.classList.add("muted"); // Añadir la clase "muted"
-            muteButton.innerHTML = '<i class="fas fa-volume-mute"></i><span class="button-text">Unmute</span>'; // Cambiar icono y texto
-        }
-    });
-});
+
+            // Controlar mute/unmute
+            muteButton.addEventListener("click", function () {
+                if (audio.muted) {
+                    audio.muted = false;
+                    muteButton.classList.remove("muted"); // Elimina la clase "muted"
+                    muteButton.innerHTML = '<i class="fas fa-volume-up"></i><span class="button-text">Mute</span>'; // Cambiar icono y texto
+                } else {
+                    audio.muted = true;
+                    muteButton.classList.add("muted"); // Añadir la clase "muted"
+                    muteButton.innerHTML = '<i class="fas fa-volume-mute"></i><span class="button-text">Unmute</span>'; // Cambiar icono y texto
+                }
+            });
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -151,5 +160,8 @@
         });
     </script>
 </body>
+<footer>
+    <p>&copy; 2025 Jurassic Parts Shop. All rights reserved.</p>
+</footer>
 
 </html>

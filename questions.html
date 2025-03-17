@@ -1,162 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frequently Asked Questions</title>
-    <style>
-
-
-:root {
-    --brown-dark: #482e18;    /* Marrón oscuro más intenso (tierra, troncos) */
-    --brown-light: #ac9992;   /* Marrón claro (tono suave) */
-    --green-dino: #3A5A2F;    /* Verde dinosaurio más oscuro (hojas, naturaleza) */
-    --green-tech: #628837;    /* Verde tecnológico (pantallas, retro) */
-    --cream: #F9F5F0;         /* Fondo más claro y suave */
-    --off-white: #fff4e5;     /* Blanco roto (brillo tecnológico) */
-}
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #F9F5F0;
-            color: #5C4033; /* Texto marrón */
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav li {
-            position: relative;
-        }
-
-        nav ul li a {
-            color: white;
-            padding: 10px 15px;
-            display: block;
-            transition: background-color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #555;
-        }
-
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #444;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        nav ul li:hover ul {
-            display: block;
-        }
-
-        nav ul li ul li {
-            padding: 0;
-        }
-
-        nav ul li ul li a {
-            padding: 10px 20px;
-            white-space: nowrap;
-        }
-
-        nav ul li ul li a:hover {
-            background-color: #666;
-        }
-
-
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-            
-        }
-
-        .faq-section {
-            background: rgba(255, 255, 255, 0.8); /* Color crema claro */
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: var(--off-white);
-            border: 1px solid var(--brown-light);
-        }
-
-        h1 {
-            text-align: center;
-            color: #8B5E3B;
-        }
-
-        h2 {
-            color: #8B5E3B;
-            border-bottom: 2px solid #8B5E3B;
-            padding-bottom: 10px;
-        }
-
-        .faq-question {
-            font-weight: bold;
-            margin: 15px 0 5px;
-            cursor: pointer;
-            padding: 10px;
-            background:  #3A5A2F; 
-            color: white;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .faq-question:hover {
-            background: #D5B38A;
-        }
-
-        .faq-answer {
-            display: none;
-            margin: 0 0 15px;
-            padding: 10px;
-            background: #F1D9B5;
-            border-left: 4px solid #8B5E3B;
-            border-radius: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #8B5E3B;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        h1{
-            color: #482e18; 
-        }
-    </style>
+    <link rel="stylesheet" href="questions.css">
 </head>
 
 <body>
-    <header> 
+    <header>
         <nav>
             <ul>
-                <li><a href="portada_v2.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li>
                     <a href="catalogo.html">Catalog</a>
                     <ul>
@@ -177,14 +33,18 @@
 
         <div class="faq-section">
             <h2>About Products</h2>
-            <div class="faq-question" onclick="toggleAnswer(this)">How can I check if a component is compatible with my project?</div>
-            <p class="faq-answer">Check compatibility on the manufacturer's website or consult our staff for guidance.</p>
+            <div class="faq-question" onclick="toggleAnswer(this)">How can I check if a component is compatible with my
+                project?</div>
+            <p class="faq-answer">Check compatibility on the manufacturer's website or consult our staff for guidance.
+            </p>
 
             <div class="faq-question" onclick="toggleAnswer(this)">Do you provide technical datasheets?</div>
-            <p class="faq-answer">Yes, all our products include detailed datasheets with specifications and usage guidelines.</p>
+            <p class="faq-answer">Yes, all our products include detailed datasheets with specifications and usage
+                guidelines.</p>
 
             <div class="faq-question" onclick="toggleAnswer(this)">What does "refurbished" mean?</div>
-            <p class="faq-answer">Refurbished products are pre-owned, tested, repaired, and restored to full functionality.</p>
+            <p class="faq-answer">Refurbished products are pre-owned, tested, repaired, and restored to full
+                functionality.</p>
         </div>
 
         <div class="faq-section">
@@ -227,10 +87,6 @@
         </div>
     </div>
 
-    <footer>
-        &copy; 2024 Your Company Name. All rights reserved.
-    </footer>
-
     <script>
         function toggleAnswer(question) {
             const answer = question.nextElementSibling;
@@ -238,4 +94,8 @@
         }
     </script>
 </body>
+<footer>
+    <p>&copy; 2025 Jurassic Parts Shop. All rights reserved.</p>
+</footer>
+
 </html>

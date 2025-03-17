@@ -2,55 +2,63 @@
 /* VARIABLES DE COLOR */
 /* ==================== */
 :root {
-    --brown-dark: #482e18;    /* Marrón oscuro más intenso (tierra, troncos) */
-    --brown-light: #ac9992;   /* Marrón claro (tono suave) */
-    --green-dino: #3A5A2F;    /* Verde dinosaurio más oscuro (hojas, naturaleza) */
-    --green-tech: #628837;    /* Verde tecnológico (pantallas, retro) */
-    --cream: #F9F5F0;         /* Fondo más claro y suave */
-    --off-white: #fff4e5;     /* Blanco roto (brillo tecnológico) */
+    --brown-dark: #482e18;
+    /* Marrón oscuro más intenso (tierra, troncos) */
+    --brown-light: #ac9992;
+    /* Marrón claro (tono suave) */
+    --green-dino: #3A5A2F;
+    /* Verde dinosaurio más oscuro (hojas, naturaleza) */
+    --green-tech: #628837;
+    /* Verde tecnológico (pantallas, retro) */
+    --cream: #F9F5F0;
+    /* Fondo más claro y suave */
+    --off-white: #fff4e5;
+    /* Blanco roto (brillo tecnológico) */
 }
 
 /* ==================== */
 /* ESTILOS GENERALES */
 /* ==================== */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--cream); /* Fondo más claro y suave */
-    color: var(--brown-dark); /* Texto principal en marrón oscuro */
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    background-color: #F9F5F0;
+    color: #5C4033;
+    /* Texto marrón */
 }
 
 a {
     text-decoration: none;
-    color: var(--green-tech); /* Enlaces en verde tecnológico */
+    color: var(--green-tech);
+    /* Enlaces en verde tecnológico */
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
+    color: var(--green-dino);
+    /* Hover en verde dinosaurio más oscuro */
 }
 
-/* ==================== */
-/* HEADER Y NAVEGACIÓN */
-/* ==================== */
+
 header {
-    background-color: var(--brown-dark); /* Fondo en marrón oscuro más intenso */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--brown-dark);
+    color: var(--off-white);
     padding: 15px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Menú de navegación */
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    /* Centra los elementos del menú */
     gap: 1.5rem;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
+    /* Aumenta el padding vertical */
 }
 
 nav li {
@@ -58,15 +66,17 @@ nav li {
 }
 
 nav ul li a {
-    color: var(--off-white); /* Texto en blanco roto */
-    padding: 10px 15px;
-    display: block;
+    color: var(--off-white);
+    padding: 15px 20px;
+    /* Aumenta el padding de los enlaces */
+    text-decoration: none;
+    font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--green-dino);
+    color: var(--off-white);
 }
 
 /* Submenús */
@@ -74,11 +84,22 @@ nav ul li ul {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    background-color: var(--brown-dark); /* Fondo en marrón oscuro más intenso */
+    /* Coloca el submenú debajo del elemento padre */
+    left: 50%;
+    /* Centra el submenú respecto al elemento padre */
+    transform: translateX(-50%);
+    /* Ajusta la posición para centrarlo */
+    background-color: var(--brown-dark);
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    /* Asegura que el submenú esté por encima de otros elementos */
+    min-width: 200px;
+    /* Ancho mínimo para evitar superposiciones */
+    padding: 10px 0;
+    /* Aumenta el padding vertical */
+    margin-top: 10px;
+    /* Aumenta el margen superior para separarlo del menú principal */
 }
 
 nav ul li:hover ul {
@@ -90,13 +111,17 @@ nav ul li ul li {
 }
 
 nav ul li ul li a {
-    padding: 10px 20px;
+    padding: 12px 25px;
+    /* Aumenta el padding de los enlaces del submenú */
     white-space: nowrap;
+    /* Evita que el texto se divida en varias líneas */
+    display: block;
+    /* Hace que los enlaces ocupen todo el ancho del submenú */
 }
 
 nav ul li ul li a:hover {
-    background-color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--green-dino);
+    color: var(--off-white);
 }
 
 /* ==================== */
@@ -110,8 +135,10 @@ nav ul li ul li a:hover {
 }
 
 .cart-icon {
-    background-color: var(--green-tech); /* Fondo en verde tecnológico */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--green-tech);
+    /* Fondo en verde tecnológico */
+    color: var(--off-white);
+    /* Texto en blanco roto */
     padding: 10px 15px;
     border-radius: 24px;
     cursor: pointer;
@@ -123,16 +150,20 @@ nav ul li ul li a:hover {
 }
 
 .cart-icon:hover {
-    background-color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--green-dino);
+    /* Hover en verde dinosaurio más oscuro */
+    color: var(--off-white);
+    /* Texto en blanco roto para mejor contraste */
 }
 
 .cart-dropdown {
     position: absolute;
     top: 60px;
     right: 0;
-    background-color: var(--cream); /* Fondo en crema más claro */
-    border: 1px solid var(--brown-light); /* Borde en marrón claro */
+    background-color: var(--cream);
+    /* Fondo en crema más claro */
+    border: 1px solid var(--brown-light);
+    /* Borde en marrón claro */
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     width: 320px;
@@ -162,7 +193,8 @@ nav ul li ul li a:hover {
 /* Dropdown del carrito */
 .cart-dropdown h3 {
     margin-bottom: 1rem;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
     font-size: 1.25rem;
     display: flex;
     justify-content: space-between;
@@ -172,7 +204,8 @@ nav ul li ul li a:hover {
 .cart-dropdown h3 .close-cart {
     cursor: pointer;
     font-size: 1.5rem;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
     background: none;
     border: none;
 }
@@ -188,7 +221,8 @@ nav ul li ul li a:hover {
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--brown-light); /* Borde en marrón claro */
+    border-bottom: 1px solid var(--brown-light);
+    /* Borde en marrón claro */
 }
 
 .cart-item:last-child {
@@ -201,7 +235,8 @@ nav ul li ul li a:hover {
     object-fit: cover;
     border-radius: 8px;
     margin-right: 1rem;
-    border: 1px solid var(--brown-light); /* Borde en marrón claro */
+    border: 1px solid var(--brown-light);
+    /* Borde en marrón claro */
 }
 
 .cart-item-details {
@@ -211,7 +246,8 @@ nav ul li ul li a:hover {
 .cart-item-name {
     display: block;
     font-size: 0.95rem;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
@@ -220,7 +256,8 @@ nav ul li ul li a:hover {
     display: flex;
     align-items: center;
     font-size: 0.9rem;
-    color: var(--brown-light); /* Texto en marrón claro */
+    color: var(--brown-light);
+    /* Texto en marrón claro */
     gap: 1rem;
 }
 
@@ -230,14 +267,16 @@ nav ul li ul li a:hover {
 
 .cart-item-price {
     font-weight: bold;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
     margin-right: 1rem;
 }
 
 .cart-item-remove {
     background: none;
     border: none;
-    color: var(--green-tech); /* Texto en verde tecnológico */
+    color: var(--green-tech);
+    /* Texto en verde tecnológico */
     font-size: 1.2rem;
     cursor: pointer;
     margin-left: 1rem;
@@ -245,13 +284,15 @@ nav ul li ul li a:hover {
 }
 
 .cart-item-remove:hover {
-    color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
+    color: var(--green-dino);
+    /* Hover en verde dinosaurio más oscuro */
 }
 
 .cart-dropdown p {
     margin-top: 1rem;
     font-weight: bold;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
     text-align: right;
     font-size: 1.1rem;
 }
@@ -260,8 +301,10 @@ nav ul li ul li a:hover {
 .checkout-button {
     width: 100%;
     padding: 0.75rem;
-    background-color: var(--green-tech); /* Fondo en verde tecnológico */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--green-tech);
+    /* Fondo en verde tecnológico */
+    color: var(--off-white);
+    /* Texto en blanco roto */
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -272,8 +315,10 @@ nav ul li ul li a:hover {
 }
 
 .checkout-button:hover {
-    background-color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--green-dino);
+    /* Hover en verde dinosaurio más oscuro */
+    color: var(--off-white);
+    /* Texto en blanco roto para mejor contraste */
 }
 
 /* ==================== */
@@ -293,8 +338,10 @@ nav ul li ul li a:hover {
 .products-filter {
     width: 300px;
     padding: 1rem;
-    border-right: 1px solid var(--brown-light); /* Borde en marrón claro */
-    background-color: var(--cream); /* Fondo en crema más claro */
+    border-right: 1px solid var(--brown-light);
+    /* Borde en marrón claro */
+    background-color: var(--cream);
+    /* Fondo en crema más claro */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     margin: 20px 12px;
     align-self: flex-start;
@@ -320,34 +367,44 @@ nav ul li ul li a:hover {
 }
 
 .filter-buttons .apply-filters {
-    background-color: var(--green-tech); /* Fondo en verde tecnológico */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--green-tech);
+    /* Fondo en verde tecnológico */
+    color: var(--off-white);
+    /* Texto en blanco roto */
 }
 
 .filter-buttons .apply-filters:hover {
-    background-color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--green-dino);
+    /* Hover en verde dinosaurio más oscuro */
+    color: var(--off-white);
+    /* Texto en blanco roto para mejor contraste */
 }
 
 .filter-buttons .clear-filters {
-    background-color: var(--brown-dark); /* Fondo en marrón oscuro más intenso */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--brown-dark);
+    /* Fondo en marrón oscuro más intenso */
+    color: var(--off-white);
+    /* Texto en blanco roto */
 }
 
 .filter-buttons .clear-filters:hover {
-    background-color: var(--brown-light); /* Hover en marrón claro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--brown-light);
+    /* Hover en marrón claro */
+    color: var(--off-white);
+    /* Texto en blanco roto para mejor contraste */
 }
 
 .filters h2 {
     margin-bottom: 0.5rem;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
 }
 
 .filters h3 {
     font-size: medium;
     margin-bottom: 0.5rem;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
 }
 
 .filters ul {
@@ -374,8 +431,10 @@ nav ul li ul li a:hover {
 #price-indicator {
     display: inline-block;
     padding: 5px 10px;
-    background-color: var(--brown-dark); /* Fondo en marrón oscuro más intenso */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--brown-dark);
+    /* Fondo en marrón oscuro más intenso */
+    color: var(--off-white);
+    /* Texto en blanco roto */
     border-radius: 5px;
     margin-top: 10px;
     font-size: 1rem;
@@ -420,8 +479,10 @@ nav ul li ul li a:hover {
 
 /* Estilos para las tarjetas de productos */
 .product-card {
-    background-color: var(--off-white); /* Fondo en blanco roto */
-    border: 1px solid var(--brown-light); /* Borde en marrón claro */
+    background-color: var(--off-white);
+    /* Fondo en blanco roto */
+    border: 1px solid var(--brown-light);
+    /* Borde en marrón claro */
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -443,7 +504,8 @@ nav ul li ul li a:hover {
 
 .product-card h3 {
     font-size: 1rem;
-    color: var(--brown-dark); /* Texto en marrón oscuro más intenso */
+    color: var(--brown-dark);
+    /* Texto en marrón oscuro más intenso */
     margin-bottom: 0.5rem;
     text-align: center;
     flex-grow: 1;
@@ -454,7 +516,8 @@ nav ul li ul li a:hover {
 
 .product-card p {
     font-size: 0.9rem;
-    color: var(--brown-light); /* Texto en marrón claro */
+    color: var(--brown-light);
+    /* Texto en marrón claro */
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -462,8 +525,10 @@ nav ul li ul li a:hover {
 .product-card button {
     width: 100%;
     padding: 0.5rem;
-    background-color: var(--green-tech); /* Fondo en verde tecnológico */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--green-tech);
+    /* Fondo en verde tecnológico */
+    color: var(--off-white);
+    /* Texto en blanco roto */
     border: none;
     border-radius: 5px;
     font-size: 0.9rem;
@@ -472,16 +537,20 @@ nav ul li ul li a:hover {
 }
 
 .product-card button:hover {
-    background-color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--green-dino);
+    /* Hover en verde dinosaurio más oscuro */
+    color: var(--off-white);
+    /* Texto en blanco roto para mejor contraste */
 }
 
 /* ==================== */
 /* FOOTER */
 /* ==================== */
 footer {
-    background-color: var(--brown-dark); /* Fondo en marrón oscuro más intenso */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--brown-dark);
+    /* Fondo en marrón oscuro más intenso */
+    color: var(--off-white);
+    /* Texto en blanco roto */
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
@@ -504,7 +573,8 @@ footer p {
     .products-filter {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid var(--brown-light); /* Borde en marrón claro */
+        border-bottom: 1px solid var(--brown-light);
+        /* Borde en marrón claro */
         margin: 0;
         padding: 1rem;
     }

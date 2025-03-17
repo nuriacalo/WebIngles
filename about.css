@@ -1,31 +1,39 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--cream); /* Fondo más claro y suave */
-    color: var(--brown-dark); /* Texto principal en marrón oscuro */
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+:root {
+    --brown-dark: #482e18;
+    --brown-light: #ac9992;
+    --green-dino: #3A5A2F;
+    --green-tech: #628837;
+    --cream: #F9F5F0;
+    --off-white: #fff4e5;
 }
 
-/* ==================== */
-/* HEADER Y NAVEGACIÓN */
-/* ==================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F5F0;
+    color: #5C4033;
+    /* Texto marrón */
+}
+
 header {
-    background-color: var(--brown-dark); /* Fondo en marrón oscuro más intenso */
-    color: var(--off-white); /* Texto en blanco roto */
+    background-color: var(--brown-dark);
+    color: var(--off-white);
     padding: 15px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Menú de navegación */
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    /* Centra los elementos del menú */
     gap: 1.5rem;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
+    /* Aumenta el padding vertical */
 }
 
 nav li {
@@ -33,14 +41,215 @@ nav li {
 }
 
 nav ul li a {
-    color: var(--off-white); /* Texto en blanco roto */
-    padding: 10px 15px;
-    display: block;
+    color: var(--off-white);
+    padding: 15px 20px;
+    /* Aumenta el padding de los enlaces */
+    text-decoration: none;
+    font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: var(--green-dino); /* Hover en verde dinosaurio más oscuro */
-    color: var(--off-white); /* Texto en blanco roto para mejor contraste */
+    background-color: var(--green-dino);
+    color: var(--off-white);
 }
 
+/* Submenús */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Coloca el submenú debajo del elemento padre */
+    left: 50%;
+    /* Centra el submenú respecto al elemento padre */
+    transform: translateX(-50%);
+    /* Ajusta la posición para centrarlo */
+    background-color: var(--brown-dark);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* Asegura que el submenú esté por encima de otros elementos */
+    min-width: 200px;
+    /* Ancho mínimo para evitar superposiciones */
+    padding: 10px 0;
+    /* Aumenta el padding vertical */
+    margin-top: 10px;
+    /* Aumenta el margen superior para separarlo del menú principal */
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 0;
+}
+
+nav ul li ul li a {
+    padding: 12px 25px;
+    /* Aumenta el padding de los enlaces del submenú */
+    white-space: nowrap;
+    /* Evita que el texto se divida en varias líneas */
+    display: block;
+    /* Hace que los enlaces ocupen todo el ancho del submenú */
+}
+
+nav ul li ul li a:hover {
+    background-color: var(--green-dino);
+    color: var(--off-white);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 60px;
+}
+
+.member {
+    text-align: center;
+    flex: 1 1 20%;
+    max-width: 30%;
+    background-color: var(--off-white);
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.member h2 {
+    color: #482e18;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    max-width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid var(--primary-color);
+}
+
+h1 {
+    text-align: center;
+    color: #3A5A2F;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bolder;
+    font-size: 2.2em;
+}
+
+p {
+    text-align: justify;
+    max-width: 80%;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* Contenedor de imágenes */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Espacio entre las imágenes */
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 1200px;
+    /* Ancho máximo del contenedor */
+}
+
+.image-wrapper {
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+    overflow: visible;
+    /* Permite que la imagen se amplíe fuera del contenedor */
+    position: relative;
+    /* Necesario para el z-index */
+    z-index: 1;
+    /* Asegura que la imagen ampliada esté por encima de otros elementos */
+}
+
+.image-wrapper img {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* Efecto suave al ampliar */
+}
+
+.image-wrapper img:hover {
+    transform: scale(1.2);
+    /* Amplía la imagen al 120% */
+    z-index: 2;
+    /* Asegura que la imagen ampliada esté por encima de otras imágenes */
+}
+
+.us {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    background-color: var(--cream);
+    /* Mismo fondo que el cuerpo de la página */
+    text-align: center;
+}
+
+.us h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    /* Añadimos margen inferior para separar del contenido */
+    color: var(--brown-dark);
+}
+
+footer {
+    background-color: #482e18;
+    color: white;
+    /* Texto blanco */
+    padding: 20px;
+    /* Espaciado interno */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    width: 100%;
+    /* Ocupa el 100% del ancho */
+    box-sizing: border-box;
+    /* Incluye el padding en el ancho total */
+    display: flex;
+    /* Usamos flexbox para centrar */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 60px;
+    /* Altura del footer (ajusta según sea necesario) */
+    position: relative;
+    /* Asegura que el footer esté en la parte inferior */
+    bottom: 0;
+    /* Lo coloca en la parte inferior */
+    left: 0;
+    /* Lo alinea a la izquierda */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
