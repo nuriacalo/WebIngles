@@ -160,9 +160,9 @@ function removeFromCart(index) {
 // Función para manejar el botón de comprar
 document.getElementById('checkout-button').addEventListener('click', function () {
     if (cart.length === 0) {
-        alert("Tu carrito está vacío. ¡Añade algunos productos antes de comprar!");
+        alert("Your cart is empty. Add some products before purchasing!");
     } else {
-        alert(`¡Gracias por tu compra! Total: ${cartTotal.toFixed(2)}€`);
+        alert(`Thank you for your purchase! Total: ${cartTotal.toFixed(2)}€`);
         // Vaciar el carrito después de la compra
         cart = [];
         cartCount = 0;

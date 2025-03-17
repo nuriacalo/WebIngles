@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Vintage - Jurassic Parts</title>
     <link rel="stylesheet" href="catalogoVintage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             </ul>
         </nav>
     </header>
-    <div class="catalogo" id="catalogo"></div>    
+    <div class="catalogo" id="catalogo"></div>
 
     <main class="main-container">
         <aside class="products-filter">
@@ -112,8 +113,8 @@
             </div>
             <!-- Botones de aplicar y limpiar filtros -->
             <div class="filter-buttons">
-                <button class="apply-filters">Aplicar Filtros</button>
-                <button class="clear-filters">Limpiar Filtros</button>
+                <button class="apply-filters">Apply Filters</button>
+                <button class="clear-filters">Clear Filters</button>
             </div>
         </aside>
 
@@ -133,10 +134,11 @@
                     <!-- Los productos se añadirán dinámicamente aquí -->
                 </ul>
                 <p>Total: <span id="cart-total">0.00€</span></p>
-                <button id="checkout-button" class="checkout-button">Comprar</button>
+                <button id="checkout-button" class="checkout-button">Buy</button>
             </div>
         </div>
-        <script src="scriptsVintage.json"></script>
+        <script src="scriptsVintage.js"></script>
+    </main>
 </body>
 <footer>
     <p>&copy; 2025 Jurassic Parts Shop. All rights reserved.</p>

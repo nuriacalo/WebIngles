@@ -10,22 +10,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Press+Start+2P&display=swap"
         rel="stylesheet">
+    <!-- Añadido el CSS de Slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <style>
-      :root {
-    --brown-dark: #482e18;    /* Marrón oscuro más intenso (tierra, troncos) */
-    --brown-light: #ac9992;   /* Marrón claro (tono suave) */
-    --green-dino: #3A5A2F;    /* Verde dinosaurio más oscuro (hojas, naturaleza) */
-    --green-tech: #628837;    /* Verde tecnológico (pantallas, retro) */
-    --cream: #F9F5F0;         /* Fondo más claro y suave */
-    --off-white: #fff4e5;     /* Blanco roto (brillo tecnológico) */
-}
+        :root {
+            --brown-dark: #482e18;
+            --brown-light: #ac9992;
+            --green-dino: #3A5A2F;
+            --green-tech: #628837;
+            --cream: #F9F5F0;
+            --off-white: #fff4e5;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--cream); /* Fondo más claro y suave */
+            background-color: var(--cream);
             overflow-x: hidden;
         }
 
@@ -36,7 +38,6 @@
             border-bottom: none;
             box-shadow: var(--box-shadow);
             height: 80px;
-            /* Ajusta este valor según tus necesidades */
         }
 
         nav ul {
@@ -77,32 +78,8 @@
             box-shadow: var(--box-shadow);
         }
 
-
-        nav ul li a {
-    color: #FFF;
-    padding: 12px 18px; /* Mantén estos valores iguales */
-    display: block;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-
-
         nav ul li:hover ul {
             display: block;
-        }
-
-        nav ul li ul li {
-            padding: 5px 0;
-        }
-
-        nav ul li ul li a {
-            padding: 8px 15px;
-            white-space: nowrap;
-        }
-
-        nav ul li ul li a:hover {
-            color: var(--primary-color);
         }
 
         .container {
@@ -114,32 +91,33 @@
         }
 
         .member {
-    text-align: center;
-    flex: 1 1 20%;
-    max-width: 30%;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: var(--off-white);
-    border: 1px solid var(--brown-light);
-    margin: 0;
-}
+            text-align: center;
+            flex: 1 1 20%;
+            max-width: 30%;
+            background-color: var(--off-white);
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin: 0;
+        }
 
         .member:hover {
             transform: translateY(-5px);
         }
+
         h2 {
             font-size: 1.8em;
         }
+
         .member h2 {
-    color: #482e18; /* Texto en marrón oscuro más intenso */
-    width: 80%; /* Ajusta el valor según necesites */
-    margin: 0 auto; /* Centra horizontalmente el h2 */
-    text-align: center; /* Centra el texto dentro del h2 */
-    padding: 20px; /* Añade espacio alrededor del texto */
-}
+            color: #482e18;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
         img {
             max-width: 240px;
             height: 240px;
@@ -156,15 +134,11 @@
             padding-bottom: 15px;
             border-bottom: 2px solid var(--border-color);
             width: 90%;
-            /* Ahora los títulos llegan más a los lados */
             margin-left: auto;
             margin-right: auto;
             font-weight: bolder;
             font-size: 2.7em;
         }
-
-
-        
 
         p {
             text-align: justify;
@@ -174,13 +148,88 @@
             color: var(--text-color);
         }
 
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
+        /* Contenedor de imágenes */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* Espacio entre las imágenes */
+            margin: 0 auto;
+            padding: 2rem 0;
+            max-width: 1200px;
+            /* Ancho máximo del contenedor */
+        }
+
+        .image-wrapper {
+            flex: 1;
+            max-width: 30%;
             text-align: center;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: auto;
+            overflow: visible;
+            /* Permite que la imagen se amplíe fuera del contenedor */
+            position: relative;
+            /* Necesario para el z-index */
+            z-index: 1;
+            /* Asegura que la imagen ampliada esté por encima de otros elementos */
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            /* Efecto suave al ampliar */
+        }
+
+        .image-wrapper img:hover {
+            transform: scale(1.2);
+            /* Amplía la imagen al 120% */
+            z-index: 2;
+            /* Asegura que la imagen ampliada esté por encima de otras imágenes */
+        }
+
+        .us {
+            margin-top: 2rem;
+            padding: 2rem 0;
+            background-color: var(--cream);
+            /* Mismo fondo que el cuerpo de la página */
+            text-align: center;
+        }
+
+        .us h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            /* Añadimos margen inferior para separar del contenido */
+            color: var(--brown-dark);
+        }
+
+        footer {
+            background-color: #482e18;
+            color: white;
+            /* Texto blanco */
+            padding: 20px;
+            /* Espaciado interno */
+            text-align: center;
+            /* Centra el texto horizontalmente */
+            width: 100%;
+            /* Ocupa el 100% del ancho */
+            box-sizing: border-box;
+            /* Incluye el padding en el ancho total */
+            display: flex;
+            /* Usamos flexbox para centrar */
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            /* Centra verticalmente */
+            height: 60px;
+            /* Altura del footer (ajusta según sea necesario) */
+            position: relative;
+            /* Asegura que el footer esté en la parte inferior */
+            bottom: 0;
+            /* Lo coloca en la parte inferior */
+            left: 0;
+            /* Lo alinea a la izquierda */
         }
 
         footer p {
@@ -189,6 +238,7 @@
         }
     </style>
 </head>
+
 <header>
     <nav>
         <ul>
@@ -210,27 +260,35 @@
 
 <body>
 
-
-
     <h1>About Us</h1>
-    <p>Welcome to 'Jurassic Parts', your trusted online store for everything technology related. We've been here since
-        2012 and are passionate about making technology available to everyone. We sell a wide range of computer parts,
+    <p>Welcome to 'Jurassic Parts', your trusted online store for everything technology related. We've been here
+        since
+        2012 and are passionate about making technology available to everyone. We sell a wide range of computer
+        parts,
         gadgets and electronics, from the basics to the latest innovations.
     </p>
     <p>At Jurassic Parts we believe in simplicity. Our website is easy to navigate and we offer clear and useful
-        information on all our products. We offer competitive prices and fast, reliable shipping, so you can get your
+        information on all our products. We offer competitive prices and fast, reliable shipping, so you can get
+        your
         technology quickly and without spending a lot of money.</p>
-    <p>We are more than a store: we are a community of technology enthusiasts. Our customer service team is always ready
-        to answer your questions, and whether you're a seasoned pro or just starting out, Jurassic Parts is here to help
+    <p>We are more than a store: we are a community of technology enthusiasts. Our customer service team is always
+        ready
+        to answer your questions, and whether you're a seasoned pro or just starting out, Jurassic Parts is here to
+        help
         you explore the exciting world of technology.</p>
     <h1>Our History</h1>
-    <p>Our company started as a small neighborhood store. We focused on serving our local customers and building strong
-        relationships within our community. Over time, we grew. We started reaching out to nearby towns and then larger
+    <p>Our company started as a small neighborhood store. We focused on serving our local customers and building
+        strong
+        relationships within our community. Over time, we grew. We started reaching out to nearby towns and then
+        larger
         cities. Later we saw the need for our products and services in more places, so we decided to expand.</p>
-    <p>Today we are proud to say that we have distribution centers all over the world. We have come a long way from our
-        small store. You can find us in many different places. We are in A Coruña, Spain, and also in Barcelona. We have
+    <p>Today we are proud to say that we have distribution centers all over the world. We have come a long way from
+        our
+        small store. You can find us in many different places. We are in A Coruña, Spain, and also in Barcelona. We
+        have
         locations in Tokyo, Japan, and Brussels, Belgium. We also have distribution in Lima, Peru, and Sydney,
-        Australia. We even have offices in Alaska (USA) and Toronto (Canada). We have worked hard to bring our products
+        Australia. We even have offices in Alaska (USA) and Toronto (Canada). We have worked hard to bring our
+        products
         and services to people all over the world. We want to make sure that everyone has access to what we have to
         offer, wherever they live.</p>
     <h1>Our Team</h1>
@@ -238,9 +296,11 @@
         <div class="member">
             <img src="team/Alex.jpg" alt="Alexandre Barbeito Domínguez">
             <h2>Alexandre Barbeito Domínguez - Backend Manager</h2>
-            <p>Alexandre Barbeito Domínguez is our Backend Manager, the architect of our server-side functionality. He
+            <p>Alexandre Barbeito Domínguez is our Backend Manager, the architect of our server-side functionality.
+                He
                 ensures our web applications run efficiently and securely. Specializing in software development and
-                maintenance, he optimizes performance and stability. His expertise in database management and APIs is
+                maintenance, he optimizes performance and stability. His expertise in database management and APIs
+                is
                 fundamental to our platforms' data flow and functionality. Alexandre's work provides the robust
                 foundation our services rely on.</p>
         </div>
@@ -248,44 +308,61 @@
         <div class="member">
             <img src="team/Martín.jpg" alt="Martín Sánchez Novo">
             <h2>Martín Sánchez Novo - Gaming Specialist</h2>
-            <p>Martín Sánchez Novo is our Gaming Specialist, the expert in high-performance gaming hardware. His passion
-                for gaming translates into optimized systems and cutting-edge peripherals. With deep knowledge of the
+            <p>Martín Sánchez Novo is our Gaming Specialist, the expert in high-performance gaming hardware. His
+                passion
+                for gaming translates into optimized systems and cutting-edge peripherals. With deep knowledge of
+                the
                 most advanced components, he guides our customers to achieve the ultimate gaming experience. His
-                dedication ensures every configuration reaches peak performance. Martín stays up-to-date on the latest
+                dedication ensures every configuration reaches peak performance. Martín stays up-to-date on the
+                latest
                 gaming technology.</p>
         </div>
 
         <div class="member">
             <img src="team/Nuria.jpg" alt="Nuria Calo Mosquera">
             <h2>Nuria Calo Mosquera - Frontend Manager</h2>
-            <p>Nuria Calo Mosquera is our Frontend Manager, the creator of engaging and functional web interfaces. Her
+            <p>Nuria Calo Mosquera is our Frontend Manager, the creator of engaging and functional web interfaces.
+                Her
                 ability to transform designs into seamless user experiences is essential. With mastery of modern
-                frontend technologies, she ensures our websites are accessible and efficient. Her commitment to quality
-                is reflected in every detail of the interface. Nuria focuses on user-centered design, making sure the
+                frontend technologies, she ensures our websites are accessible and efficient. Her commitment to
+                quality
+                is reflected in every detail of the interface. Nuria focuses on user-centered design, making sure
+                the
                 websites are easy to use.</p>
         </div>
 
         <div class="member">
             <img src="team/Silvia.jpg" alt="Silvia García Bouza">
             <h2>Silvia García Bouza - Head of Computer and Mobile Devices</h2>
-            <p>Silvia García Bouza leads our Computer and Mobile Devices division, managing the procurement and sales of
+            <p>Silvia García Bouza leads our Computer and Mobile Devices division, managing the procurement and
+                sales of
                 hardware and software. Her market knowledge allows her to offer high-quality products at competitive
-                prices. She focuses on meeting our customers' needs, providing personalized solutions and expert advice.
-                Her leadership ensures efficient inventory management and customer satisfaction. Silvia is dedicated to
+                prices. She focuses on meeting our customers' needs, providing personalized solutions and expert
+                advice.
+                Her leadership ensures efficient inventory management and customer satisfaction. Silvia is dedicated
+                to
                 providing the best tech solutions for customers..</p>
         </div>
     </div>
-    <p>
 
-    </p>
-    <p>
+    <div class="us">
+        <h2>More information About Us...</h2>
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img src="us/IMG-20250317-WA0013.jpg" alt="Image 1">
+            </div>
+            <div class="image-wrapper">
+                <img src="us/IMG-20250317-WA0014.jpg" alt="Image 2">
+            </div>
+            <div class="image-wrapper">
+                <img src="us/IMG-20250317-WA0015.jpg" alt="Image 3">
+            </div>
+        </div>
+    </div>
 
-    </p>
-    <p></p>
 </body>
 <footer>
-    <p style="text-align: center;"><a style="color: #FFF;"><b>&copy; 2025 Jurassic Parts Shop. All rights
-                reserved.</b></a></p>
+    <p>&copy; 2025 Jurassic Parts. All rights reserved.</p>
 </footer>
 
 </html>

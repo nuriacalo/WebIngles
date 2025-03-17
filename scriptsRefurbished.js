@@ -1,12 +1,12 @@
 const products = [
-   
+
     { id: 19, name: "Intel Core i5-10400F (6 núcleos, 12 hilos)", price: 73.60, category: "refurbished", type: "processors", brand: "intel", image: "productos/cpu-i5.jpg" },
     { id: 20, name: "GTX 1660 Super", price: 128.80, category: "refurbished", type: "graphic-cards", brand: "nvidia", image: "productos/gtx-1660.jpg" },
     { id: 21, name: "B450M for Ryzen", price: 46, category: "refurbished", type: "motherboards", brand: "amd", image: "productos/b450m.jpg" },
     { id: 22, name: "DDR4 16GB (2x8GB) 3200MHz", price: 36.80, category: "refurbished", type: "ram", brand: "corsair", image: "productos/ram-ddr4.jpg" },
     { id: 23, name: "SSD NVMe 1TB Gen3", price: 46, category: "refurbished", type: "storage", brand: "samsung", image: "productos/ssd-nvme.jpg" },
     { id: 24, name: "Corsair RM750 80+ Gold", price: 73.60, category: "refurbished", type: "accessories", brand: "corsair", image: "productos/corsair-sf750.jpg" },
-    
+
 ];
 
 // Carrito de compras
@@ -148,9 +148,9 @@ function removeFromCart(index) {
 // Función para manejar el botón de "Comprar"
 document.getElementById('checkout-button').addEventListener('click', function () {
     if (cart.length === 0) {
-        alert("Tu carrito está vacío. ¡Añade algunos productos antes de comprar!");
+        alert("Your cart is empty. Add some products before purchasing!");
     } else {
-        alert("¡Gracias por tu compra! Total: " + cartTotal.toFixed(2) + "€");
+        alert(`Thank you for your purchase! Total: ${cartTotal.toFixed(2)}€`);
         // Vaciar el carrito después de la compra
         cart = [];
         cartCount = 0;
