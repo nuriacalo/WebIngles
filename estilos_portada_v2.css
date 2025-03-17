@@ -56,6 +56,7 @@
      background-color: var(--green-dino);
      padding: 1rem;
      text-align: center;
+     
  }
 
  nav ul {
@@ -98,6 +99,23 @@
  main {
      padding: 2rem;
  }
+
+ /* Contenedor de la imagen */
+.menu-image-container {
+    width: 100%;
+    overflow: hidden; /* Evita que sobresalga contenido no deseado */
+    text-align: center; /* Centra la imagen si es necesario */
+    margin-top: 2rem;
+}
+
+/* Imagen dentro del contenedor */
+.menu-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
  .menu-image {
      width: 100%;
      /* Hace que la imagen ocupe todo el ancho disponible */
@@ -105,8 +123,8 @@
      /* Mantiene la relación de aspecto de la imagen */
      display: block;
      /* Elimina cualquier espacio extra debajo de la imagen */
-     margin-top: 20px;
-     /* Añade un pequeño margen arriba de la imagen para separarla del menú */
+     margin: 0; /* Elimina márgenes superiores e inferiores */
+     padding: 0; /* Asegura que no haya espacio extra */
  }
  .hero {
      background-color: var(--green-tech);
@@ -116,9 +134,56 @@
  }
 
  .hero h2 {
-     font-size: 2.5rem;
+     font-size: 2rem;
      margin: 0;
  }
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el botón de sonido */
+.sound-button {
+    background-color: #4CAF50; /* Verde atractivo */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+.sound-button:hover {
+    background-color: #45a049; /* Color verde más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+.sound-button i {
+    font-size: 20px; /* Tamaño del icono */
+}
+
+.sound-button .button-text {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Estilo para el botón de sonido silenciado */
+.sound-button.muted {
+    background-color: #f44336; /* Rojo para el estado de silencio */
+}
+
+.sound-button.muted:hover {
+    background-color: #d32f2f; /* Rojo más oscuro */
+}
+
 
  /* Carrusel de promociones */
  .promotions {

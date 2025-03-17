@@ -33,8 +33,24 @@
         </ul>
     </nav>
 
-    <!-- Imagen debajo del menú -->
-    <img src="dino_ruled_earth.jpg" alt="Descripción de la imagen" class="menu-image">
+
+  <!-- Contenedor de la imagen debajo del menú -->
+<div class="menu-image-container">
+    <img src="dino_ruled_earth_recorted.jpg" alt="Descripción de la imagen" class="menu-image">
+</div>
+
+<audio id="audioPortada" autoplay loop>
+    <source src="jurassic_park_theme_song.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+</audio>
+
+<div class="audio-controls">
+<button id="muteButton" class="sound-button">
+    <i class="fas fa-volume-up"></i> <!-- Icono para el sonido activado -->
+    <span class="button-text">Mute</span>
+</button>
+</div>
+
 
     <main>
 
@@ -43,15 +59,15 @@
             <h2>Latest Promotions</h2>
             <div class="promotions-carousel">
                 <div class="promo-slide"><img src="promociones/A.webp" alt="Promo 1"></div>
-                <div class="promo-slide"><img src="promociones/B.webp" alt="Promo 2"></div>
-                <div class="promo-slide"><img src="promociones/C.webp" alt="Promo 3"></div>
+                <div class="promo-slide"><img src="promociones/D.jpeg" alt="Promo 2"></div>
+                <div class="promo-slide"><img src="promociones/20.png" alt="Promo 3"></div>
             </div>
         </section>
 
 
         <!-- Sección Hero -->
         <section class="hero">
-            <h2>Cutting-Edge Technology at Your Fingertips</h2>
+            <h2>High-Tech Components with a Prehistoric Touch</h2>
         </section>
 
         <!-- Sección de marcas -->
@@ -88,7 +104,26 @@
             </div>
         </div>
     </main>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("audioPortada");
+    const muteButton = document.getElementById("muteButton");
 
+    // Controlar mute/unmute
+    muteButton.addEventListener("click", function () {
+        if (audio.muted) {
+            audio.muted = false;
+            muteButton.classList.remove("muted"); // Elimina la clase "muted"
+            muteButton.innerHTML = '<i class="fas fa-volume-up"></i><span class="button-text">Mute</span>'; // Cambiar icono y texto
+        } else {
+            audio.muted = true;
+            muteButton.classList.add("muted"); // Añadir la clase "muted"
+            muteButton.innerHTML = '<i class="fas fa-volume-mute"></i><span class="button-text">Unmute</span>'; // Cambiar icono y texto
+        }
+    });
+});
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
