@@ -244,9 +244,23 @@
      right: 10px;
  }
 
+ .gif-container {
+    display: flex; /* Centra el contenido */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* O el ancho que prefieras */
+    height: auto; /* Ajusta según sea necesario */
+}
+
+.gif-portada {
+    max-width: 100%; /* Para que no se salga del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Si quieres bordes redondeados */
+}
+
+
  /* Sección de marcas */
  .brands-section {
-     margin-top: 4rem;
      padding: 3rem 1.5rem;
      background-color: var(--off-white);
      text-align: center;
