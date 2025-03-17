@@ -1,5 +1,5 @@
 const products = [
-    
+
     { id: 25, name: "Intel Core i9 14900K", price: 650, category: "new", type: "processors", brand: "intel", image: "productos/intel-core-i9.jpg" },
     { id: 26, name: "AMD Ryzen 7 7800X3D", price: 450, category: "new", type: "processors", brand: "amd", image: "productos/amd-ryzen.jpg" },
     { id: 27, name: "Intel Core Ultra 5 245K", price: 300, category: "new", type: "processors", brand: "intel", image: "productos/intel-core-ultra.jpg" },
@@ -156,15 +156,16 @@ function removeFromCart(index) {
 // Función para manejar el botón de "Comprar"
 document.getElementById('checkout-button').addEventListener('click', function () {
     if (cart.length === 0) {
-        alert("Tu carrito está vacío. ¡Añade algunos productos antes de comprar!");
+        alert("Your cart is empty. Add some products before purchasing!");
     } else {
-        alert("¡Gracias por tu compra! Total: " + cartTotal.toFixed(2) + "€");
-        // Vaciar el carrito después de la compra
-        cart = [];
-        cartCount = 0;
-        cartTotal = 0;
-        updateCart();
+        alert(`Thank you for your purchase! Total: ${cartTotal.toFixed(2)}€`);
     }
+    // Vaciar el carrito después de la compra
+    cart = [];
+    cartCount = 0;
+    cartTotal = 0;
+    updateCart();
+}
 });
 
 

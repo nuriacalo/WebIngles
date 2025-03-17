@@ -17,7 +17,7 @@ const products = [
     { id: 16, name: "RAM (EDO, SIMM, SDRAM)", price: 50, category: "vintage", type: "ram", brand: "ibm", image: "productos/ram.jpg" },
     { id: 17, name: "Chips ROM/EPROM", price: 10, category: "vintage", type: "components", brand: "ibm", image: "productos/rom.jpg" },
     { id: 18, name: "Capacitors, Resistors, and Connectors", price: 10, category: "vintage", type: "components", brand: "ibm", image: "productos/capacitors.jpg" },
-    
+
 ];
 
 // Carrito de compras
@@ -159,15 +159,16 @@ function removeFromCart(index) {
 // Función para manejar el botón de "Comprar"
 document.getElementById('checkout-button').addEventListener('click', function () {
     if (cart.length === 0) {
-        alert("Tu carrito está vacío. ¡Añade algunos productos antes de comprar!");
+        alert("Your cart is empty. Add some products before purchasing!");
     } else {
-        alert("¡Gracias por tu compra! Total: " + cartTotal.toFixed(2) + "€");
-        // Vaciar el carrito después de la compra
-        cart = [];
-        cartCount = 0;
-        cartTotal = 0;
-        updateCart();
+        alert(`Thank you for your purchase! Total: ${cartTotal.toFixed(2)}€`);
     }
+    // Vaciar el carrito después de la compra
+    cart = [];
+    cartCount = 0;
+    cartTotal = 0;
+    updateCart();
+}
 });
 
 
