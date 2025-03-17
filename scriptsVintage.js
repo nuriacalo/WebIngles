@@ -162,13 +162,12 @@ document.getElementById('checkout-button').addEventListener('click', function ()
         alert("Your cart is empty. Add some products before purchasing!");
     } else {
         alert(`Thank you for your purchase! Total: ${cartTotal.toFixed(2)}€`);
+        // Vaciar el carrito después de la compra
+        cart = [];
+        cartCount = 0;
+        cartTotal = 0;
+        updateCart();
     }
-    // Vaciar el carrito después de la compra
-    cart = [];
-    cartCount = 0;
-    cartTotal = 0;
-    updateCart();
-}
 });
 
 
