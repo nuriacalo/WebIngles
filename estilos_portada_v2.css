@@ -1,0 +1,252 @@
+ /* ==================== */
+ /* VARIABLES DE COLOR */
+ /* ==================== */
+ :root {
+     --brown-dark: #482e18;
+     /* Marrón oscuro más intenso (tierra, troncos) */
+     --brown-light: #ac9992;
+     /* Marrón claro (tono suave) */
+     --green-dino: #3A5A2F;
+     /* Verde dinosaurio más oscuro (hojas, naturaleza) */
+     --green-tech: #628837;
+     /* Verde tecnológico (pantallas, retro) */
+     --cream: #F9F5F0;
+     /* Fondo más claro y suave */
+     --off-white: #fff4e5;
+     /* Blanco roto (brillo tecnológico) */
+ }
+
+ @font-face {
+     font-family: 'JurassicFont';
+     /* Aquí va la fuente que me proporcionaste */
+     src: url('Jurassic_Park.ttf');
+     /* Cambia esto por la ruta correcta de tu fuente */
+ }
+
+ /* Estilos generales */
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: var(--cream);
+     color: var(--brown-dark);
+ }
+
+ header {
+     background-color: var(--brown-dark);
+     color: var(--off-white);
+     padding: 1rem 0;
+     text-align: center;
+ }
+
+ header h1 {
+     font-family: 'JurassicFont', sans-serif;
+     /* Aplicar la fuente */
+     color: #D2232A;
+     /* Rojo del logo */
+     text-shadow: 2px 2px 0 #FDB913, 4px 4px 0 #000000;
+     /* Sombras en amarillo y negro, imitando el logo */
+     font-size: 4rem;
+     /* Ajusta el tamaño según prefieras */
+     margin: 0;
+     font-size: 7rem;
+ }
+
+ nav {
+     background-color: var(--green-dino);
+     padding: 1rem;
+     text-align: center;
+ }
+
+ nav ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ nav ul li {
+     display: inline;
+     margin: 0 1rem;
+ }
+
+ nav ul li a {
+     color: var(--off-white);
+     text-decoration: none;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     padding: 10px;
+     transition: all 0.3s ease;
+ }
+
+ nav ul li a:hover {
+     background-color: #3E8E41;
+     /* Verde elegante */
+     color: #F5F5DC;
+     /* Texto en crema */
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Efecto hover */
+ nav ul li a:hover {
+     background-color: #4CAF50;
+     /* Color de fondo al pasar el mouse */
+     color: white;
+     /* Cambia el color del texto al pasar el mouse */
+ }
+
+ main {
+     padding: 2rem;
+ }
+ .menu-image {
+     width: 100%;
+     /* Hace que la imagen ocupe todo el ancho disponible */
+     height: auto;
+     /* Mantiene la relación de aspecto de la imagen */
+     display: block;
+     /* Elimina cualquier espacio extra debajo de la imagen */
+     margin-top: 20px;
+     /* Añade un pequeño margen arriba de la imagen para separarla del menú */
+ }
+ .hero {
+     background-color: var(--green-tech);
+     color: var(--off-white);
+     padding: 4rem 2rem;
+     text-align: center;
+ }
+
+ .hero h2 {
+     font-size: 2.5rem;
+     margin: 0;
+ }
+
+ /* Carrusel de promociones */
+ .promotions {
+     margin-top: 2rem;
+     padding: 2rem 0;
+     background-color: var(--off-white);
+     text-align: center;
+ }
+
+ .promotions h2 {
+     font-size: 2rem;
+     margin-bottom: 1rem;
+     color: var(--brown-dark);
+ }
+
+ .promotions-carousel {
+     max-width: 800px;
+     margin: 0 auto;
+     position: relative;
+ }
+
+ .promo-slide img {
+     width: 100%;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Flechas de navegación del carrusel */
+ .slick-prev,
+ .slick-next {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background-color: rgba(255, 255, 255, 0.8);
+     border: none;
+     border-radius: 50%;
+     width: 40px;
+     height: 40px;
+     font-size: 1.5rem;
+     color: var(--brown-dark);
+     cursor: pointer;
+     z-index: 1;
+     transition: background-color 0.3s ease;
+ }
+
+ .slick-prev:hover,
+ .slick-next:hover {
+     background-color: rgba(255, 255, 255, 1);
+ }
+
+ .slick-prev {
+     left: 10px;
+ }
+
+ .slick-next {
+     right: 10px;
+ }
+
+ /* Sección de marcas */
+ .brands-section {
+     margin-top: 4rem;
+     padding: 3rem 1.5rem;
+     background-color: var(--off-white);
+     text-align: center;
+     border-top: 2px solid var(--green-tech);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ .brands-section h2 {
+     font-size: 2rem;
+     margin-bottom: 1rem;
+     color: var(--brown-dark);
+ }
+
+ .brands-section p {
+     font-size: 1.2rem;
+     color: var(--brown-dark);
+     margin-bottom: 2rem;
+ }
+
+ .brands-container {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     /* 4 columnas para las marcas */
+     gap: 2rem;
+     max-width: 1000px;
+     margin: 0 auto;
+ }
+
+ .brands-container .brand-item {
+     background-color: white;
+     /* Fondo blanco para las imágenes */
+     padding: 1.5rem;
+     /* Espaciado interno */
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .brands-container img {
+     width: 100%;
+     height: 180px;
+     /* Altura más grande para las imágenes */
+     object-fit: contain;
+     /* Asegura que la imagen se ajuste sin distorsión */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .brands-container img:hover {
+     transform: scale(1.05);
+ }
+
+ /* Estilo para la imagen debajo del menú */
+
+
+
+
+ /* Estilos para pantallas pequeñas */
+ @media (max-width: 768px) {
+     .brands-container {
+         grid-template-columns: repeat(2, 1fr);
+         /* 2 columnas en móviles */
+     }
+
+     .brands-container img {
+         height: 150px;
+         /* Altura ajustada para móviles */
+     }
+ }
