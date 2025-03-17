@@ -45,10 +45,10 @@
 </audio>
 
 <div class="audio-controls">
-<button id="muteButton" class="sound-button">
-    <i class="fas fa-volume-up"></i> <!-- Icono para el sonido activado -->
-    <span class="button-text">Mute</span>
-</button>
+    <button id="muteButton" class="sound-button muted">
+        <i class="fas fa-volume-mute"></i> <!-- Icono inicial de mute -->
+        <span class="button-text">Unmute</span>
+    </button>
 </div>
 
 
@@ -105,9 +105,12 @@
         </div>
     </main>
     <script>
-       document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("audioPortada");
     const muteButton = document.getElementById("muteButton");
+
+    // Asegurar que el audio comienza silenciado
+    audio.muted = true;
 
     // Controlar mute/unmute
     muteButton.addEventListener("click", function () {
@@ -122,7 +125,6 @@
         }
     });
 });
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>

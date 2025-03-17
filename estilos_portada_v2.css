@@ -109,12 +109,14 @@
 }
 
 /* Imagen dentro del contenedor */
-.menu-image {
-    width: 100%;
-    height: auto;
+.menu-image-container img {
+    width: 100%;  /* La imagen será responsiva */
+    max-width: 1300px; /* Cambia este valor según el tamaño máximo deseado */
+    height: auto; /* Mantiene la proporción */
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /* Centra la imagen */
 }
+
 
  .menu-image {
      width: 100%;
@@ -315,3 +317,16 @@
          /* Altura ajustada para móviles */
      }
  }
+
+ @media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
