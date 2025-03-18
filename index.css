@@ -296,6 +296,7 @@ nav ul li ul li a:hover {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
+    margin-bottom: 6rem;
 }
 
 .promo-slide {
@@ -362,7 +363,7 @@ nav ul li ul li a:hover {
 
 /* Sección de marcas */
 .brands-section {
-    margin-top: 4rem;
+
     padding: 3rem 1.5rem;
     background-color: var(--off-white);
     text-align: center;
